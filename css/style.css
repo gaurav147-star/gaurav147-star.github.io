@@ -6,89 +6,59 @@
 body{
   background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
 }
-/*Navigation Bar*/
-
-#navbar {
-  display: flex;
-  position: sticky;
-
-  width: 100%;
-  background-color: #ffffff9f;
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+#nav{
+  background: #000000ca !important;
 }
-
-#logo {
-  margin: 1px 70px;
-}
-#logo img {
-  height: 34px;
-  margin: 7px 34px;
-}
-#navbar ul {
-  list-style: none;
-  display: flex;
-}
-
-#navbar li a {
-  display: flex;
-  color: black;
-  font-family: "Montserrat", sans-serif;
-  text-decoration: none;
-  padding: 2px 10px;
-  margin: 17px 21px;
-}
-#navbar li a:hover {
-  color: rgba(128, 128, 128, 0.836);
-  transform: scale(1.2, 1.2);
+.nav-link{
+  font-size: 20px !important;
 }
 
 #home {
   width: 100%;
-  height: 85vh;
-
-  /* background: url("../img/bg.png"); */
-  background-size: cover;
-  background-repeat: no-repeat;
-
+  height: 100vh;
   display: flex;
+  flex-direction: row;
+  margin-bottom: 45px;
 }
 
 #sss p:nth-child(1) {
   font-family: calibri;
   font-weight: bold;
   color: #6d6d6d;
-  font-size: 22px;
+  font-size: 35px;
+  margin: 0;
 }
 #sss p:nth-child(2) {
   font-family: calibri;
   font-weight: bold;
   letter-spacing: 1px;
   color: #1a1a1a;
-  font-size: 60px;
+  font-size: 50px;
+  margin: 0;
+
 }
 #sss p:nth-child(3) {
   font-family: myriad pro regular;
   color: #403e3e;
-  font-size: 30px;
+  font-size: 40px;
+  margin: 0;
 }
 #sss {
-  /* margin: 140px 180px; */
-  /* padding: 16px 33px; */
-  margin: 15rem;
+  /* margin: 15rem;
+  margin-top: 20rem; */
+  margin: auto;
 }
 #model{
-  margin-top: 4rem;
-  margin-left: 20rem;
+  /* margin-top: 8rem;
+  margin-left: 15rem; */
+  margin: auto;
 }
 #model img {
   box-shadow: 2px rgba(0, 0, 0, 1);
-  /* padding-top: 60px; */
-  height: 60vh;
-  position: relative;
-  /* top: 150px;
-  right: 15px; */
-
-
+  height: 70vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  /* background-size: contain; */
 }
 #about {
   width: 80%;
