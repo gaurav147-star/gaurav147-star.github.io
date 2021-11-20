@@ -56,8 +56,8 @@ body {
   /* background-size: contain; */
 }
 #about {
-  width: 80%;
-  height: 330px;
+  width: 70%;
+  height: 400px;
   background: #ffffffa1;
   border-radius: 20px;
 
@@ -71,26 +71,27 @@ body {
 }
 #about:hover {
   transform: scale(1.02, 1.02);
-  width: 85%;
-  /* height: 330px; */
-  /* transition-delay: 2s; */
+  width: 75%;
   transition-timing-function: ease-in-out;
 }
 #about img {
   height: 250px;
 }
 .about-text {
-  width: 500px;
+  width: 600px;
+  font-size: 1rem;
 }
 .about-text p:nth-child(1) {
   color: black;
   font-family: "Baloo Tammudu 2", cursive;
 
-  font-size: 23px;
+  font-size: 2.2rem;
   line-height: 0px;
 }
 .ctk {
   font-family: "Baloo Tammudu 2", cursive;
+  font-size: 1.5rem;
+
 }
 
 .head {
@@ -100,70 +101,32 @@ body {
   font-family: "Baloo Tammudu 2", cursive;
 }
 #skill {
-  background-color: rgba(128, 128, 128, 0.11);
-}
-#dabba {
-  height: 400px;
+  /* margin-top: 10px; */
+  background-color: rgba(231, 231, 231, 0.657) !important;
+  height: 50vh;
   width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
 }
-.box {
-  background-color: rgba(0, 0, 0, 0.911);
-  border-radius: 25px;
-  width: 264px;
-  height: 308px;
-  margin: 48px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.progress-bar{
+  background: rgba(0, 204, 0, 0.692) !important;
 }
+
 .head h2 {
   padding: 0px;
 }
-
-#img1 {
-  margin: 1px 70px;
+.card{
+  /* background: #000000 !important; */
+  width: 30% !important;
+  height: 40vh !important;
+  margin: auto;
+  background: rgba(240, 255, 240, 0.719) !important;
 }
-#img1 img {
-  height: 128px;
-  margin: 1px 34px;
-  border-radius: 38px;
+.card-img-top{
+  /* width: 100%; */
+  object-fit: contain !important;
+  /* width:2vw !important; */
+  width: 100% !important;
+  height: 45vh !important;
 }
-#img2 {
-  margin: 1px 70px;
-}
-#img2 img {
-  height: 128px;
-  margin: 1px 34px;
-  border-radius: 39px;
-  width: 168px;
-}
-#img3 {
-  margin: 1px 70px;
-}
-#img3 img {
-  height: 118px;
-  margin: 1px 34px;
-  border-radius: 38px;
-  width: 170px;
-}
-.box {
-  display: flex;
-  flex-direction: column;
-}
-.box:hover {
-  transform: scale(1.05, 1.05);
-  transition-duration: 1s;
-  transition: 1s ease-in-out;
-}
-.box h4 {
-  color: white;
-  text-align: center;
-  font-family: "Baloo Tammudu 2", cursive;
-}
-
 footer {
   height: 270px;
   display: flex;
@@ -290,7 +253,7 @@ footer p {
 
   #about {
     flex-direction: column;
-    height: 600px;
+    height: 700px;
     width: 90%;
     margin: 20px auto 5px auto;
   }
@@ -306,17 +269,8 @@ footer p {
   .social {
     display: none;
   }
-  #dabba {
-    flex-direction: column;
-    height: 738px;
-  }
-  #skill {
-    height: 841px;
-  }
-  .box {
-    width: 300px;
-    height: 1060px;
-    margin: 23px;
+  #skill{
+    height: 60vh;
   }
 }
 
@@ -339,5 +293,16 @@ footer p {
   }
   #sss {
     margin: auto;
+  }
+  #about{
+    transform: translateY(-15%);
+    height: 800px;
+  }
+  #about img {
+    height: 200px;
+  }
+  #skill{
+    transform: translateY(-25%);
+    height: 60vh;
   }
 }
