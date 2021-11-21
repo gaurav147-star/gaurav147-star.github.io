@@ -103,7 +103,7 @@ body {
 #skill {
   /* margin-top: 10px; */
   background-color: rgba(231, 231, 231, 0.657) !important;
-  height: 50vh;
+  height: 40vh;
   width: 100%;
 }
 .progress-bar{
@@ -127,7 +127,7 @@ body {
   width: 100% !important;
   height: 45vh !important;
 }
-footer {
+/* footer {
   height: 270px;
   display: flex;
   background: rgba(155, 155, 155, 0.76);
@@ -135,7 +135,16 @@ footer {
   align-items: center;
   justify-content: center;
   position: relative;
-  /* margin: auto; */
+  margin: auto;
+} */
+
+#contact{
+  margin: auto;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 footer p {
   font-family: calibri;
@@ -152,8 +161,8 @@ footer p {
 }
 
 .social-icon a {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,11 +183,11 @@ footer p {
   transition: all ease 0.5s;
 }
 .social-icons {
-  margin: 21px;
+  margin: 0px;
 }
 .social-icons a {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,9 +215,9 @@ footer p {
 
 .social {
   position: fixed;
-  top: 50%;
+  top: 40%;
   right: 0px;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
 }
 .social a {
   display: flex;
@@ -303,6 +312,9 @@ footer p {
   }
   #skill{
     transform: translateY(-25%);
-    height: 60vh;
+    height: 55vh;
+  }
+  #contact{
+    height: 80px;
   }
 }
