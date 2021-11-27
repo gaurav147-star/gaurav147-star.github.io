@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap");
 * {
   margin: 0px;
   padding: 0px;
@@ -9,7 +9,7 @@ body {
 #nav {
   background: #000000ca !important;
   border-radius: 0 0 10px 10px !important;
-  font-family: 'Caveat', cursive !important;
+  font-family: "Caveat", cursive !important;
   /* font-size: 1.5rem !important; */
 }
 .nav-link {
@@ -252,7 +252,6 @@ footer p {
     width: 85%;
     margin: 20px auto 5px auto;
     /* transition: width 1s; */
-
   }
   /* #about:hover {
     transform: scale(1.02, 1.02);
@@ -274,8 +273,20 @@ footer p {
   #skill {
     height: 60vh;
   }
+  .card {
+    width: 40% !important;
+    height: 60vh !important;
+    margin: auto;
+    margin-bottom: 45px;
+    /* margin-: 45px; */
+  }
 }
-
+@media screen and (max-width: 600px) {
+  .card {
+    width: 20rem !important;
+    height: 70vh !important;
+  }
+}
 @media screen and (max-width: 500px) {
   #model img {
     height: 45vh;
