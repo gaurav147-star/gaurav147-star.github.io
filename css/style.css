@@ -73,8 +73,8 @@ body {
   /* transition: width 1s; */
 }
 #about:hover {
-  transform: scale(1.02, 1.02);
-  width: 75%;
+  /* transform: scale(1.02, 1.02); */
+  /* width: 75%; */
   /* transition-timing-function: ease-in-out; */
 }
 #about img {
