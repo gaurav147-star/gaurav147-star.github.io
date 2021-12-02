@@ -15,7 +15,19 @@ body {
 .nav-link {
   font-size: 1.8rem !important;
 }
-
+.hover-line::after {
+  content: " ";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: rgba(0, 235, 0, 0.835);
+  transition: width 0.3s;
+  text-align: center;
+}
+.hover-line:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
 #home {
   width: 100%;
   height: 100vh;
@@ -72,11 +84,7 @@ body {
   align-items: center;
   /* transition: width 1s; */
 }
-#about:hover {
-  /* transform: scale(1.02, 1.02); */
-  /* width: 75%; */
-  /* transition-timing-function: ease-in-out; */
-}
+
 #about img {
   height: 250px;
 }
@@ -286,7 +294,7 @@ footer p {
     width: 20rem !important;
     height: 70vh !important;
   }
-  .progress{
+  .progress {
     width: 80% !important;
   }
 }

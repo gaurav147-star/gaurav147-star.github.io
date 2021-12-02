@@ -27,6 +27,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@600&family=Play&display=swap"
     rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
     body {
       background-repeat: no-repeat;
@@ -83,7 +85,7 @@
 
     .card-title>a {
       color: black;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
     }
 
     @media screen and (max-width: 500px) {}
@@ -102,19 +104,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto mx-5">
         <li class="nav-item active mx-4">
-          <a class="nav-link" href="index.html#home">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link hover-line" href="index.html#home">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active mx-4">
-          <a class="nav-link" href="index.html#about">About</a>
+          <a class="nav-link hover-line" href="index.html#about">About</a>
         </li>
         <li class="nav-item active mx-4">
-          <a class="nav-link" href="index.html#skill">Skills</a>
+          <a class="nav-link hover-line" href="index.html#skill">Skills</a>
         </li>
         <li class="nav-item active mx-4">
-          <a class="nav-link" href="project.html">Projects</a>
+          <a class="nav-link hover-line" href="project.html">Projects</a>
         </li>
         <li class="nav-item active mx-4">
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link hover-line" href="#contact">Contact</a>
         </li>
     </div>
   </nav>
@@ -126,7 +128,7 @@
     font-family: 'Play', sans-serif;">My Projects</h1>
   </div>
   <div class="row1">
-    <div class="card">
+    <div class="card" data-aos='fade-right'>
       <img class="card-img-top" src="./assets/snake-blast.png" alt="Card image cap">
       <div class="card-body">
         <h4 class="card-title"><a href="https://gaurav147-star.github.io/Snake-Blast/" target="_blank">Snake-Blast</a>
@@ -138,7 +140,7 @@
           </i></a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-aos="fade-down">
       <img class="card-img-top" src="./assets/react-todos-list.png" alt="Card image cap">
       <div class="card-body">
         <h4 class="card-title"><a href="https://todos-list-gg.netlify.app/" target="_blank">Todo-list in reactjs</a>
@@ -151,7 +153,7 @@
           </i></a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-aos="zoom-out-left">
       <img class="card-img-top" src="./assets/weather.png" alt="Card image cap">
       <div class="card-body">
         <h4 class="card-title"><a href="https://apweather.netlify.app/" target="_blank">Weather-App</a></h4>
@@ -163,7 +165,7 @@
           </i></a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <img class="card-img-top" src="./assets/cardgen.png" alt="Card image cap">
       <div class="card-body">
         <h4 class="card-title"><a href="https://profilecardgen.netlify.app/">Profile-Card generator</a></h4>
@@ -175,7 +177,7 @@
           </i></a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-aos="fade-up-right">
       <img class="card-img-top" src="./assets/clock.png" alt="Card image cap">
       <div class="card-body">
         <h4 class="card-title"><a href="https://gaurav147-star.github.io/Clock/">Digital and Analog Clock</a></h4>
@@ -187,7 +189,7 @@
           </i></a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-aos="fade-up-left">
       <img class="card-img-top" src="./assets/texttestapp.png" alt="Card image cap">
       <div class="card-body">
         <h4 class="card-title"><a href="https://texttestapp.netlify.app/">Textapp</a></h4>
@@ -234,6 +236,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+    });
+  </script>
 </body>
 
 </html>
