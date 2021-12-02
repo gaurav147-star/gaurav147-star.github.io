@@ -84,6 +84,9 @@ body {
   align-items: center;
   /* transition: width 1s; */
 }
+#resume:hover{
+background: rgba(0, 128, 0, 0.781);
+}
 
 #about img {
   height: 250px;
