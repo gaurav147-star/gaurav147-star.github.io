@@ -84,8 +84,32 @@ body {
   align-items: center;
   /* transition: width 1s; */
 }
-#resume:hover{
-background: rgba(0, 128, 0, 0.781);
+#resume {
+  background-image: linear-gradient(
+    to right,
+    #3ca55c 0%,
+    #b5ac49 51%,
+    #3ca55c 100%
+  );
+}
+#resume {
+  /* margin: 10px; */
+  padding: 15px 45px;
+  /* text-align: center; */
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+  /* display: block; */
+}
+#resume:hover {
+  /* background: rgba(0, 128, 0, 0.781); */
+
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 #about img {
