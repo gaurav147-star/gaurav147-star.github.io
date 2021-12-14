@@ -51,6 +51,15 @@ body {
   font-size: 50px;
   margin: 0px;
 }
+.typed{
+  text-align: center;
+  font-family: calibri;
+  font-weight: bold;
+  /* letter-spacing: 0px; */
+  color: #1a1a1a;
+  font-size: 30px;
+  margin: 0px;
+}
 #sss p:nth-child(3) {
   font-family: myriad pro regular;
   color: #403e3e;
@@ -71,8 +80,8 @@ body {
   /* background-size: contain; */
 }
 #about {
-  width: 70%;
-  height: 400px;
+  width: 80%;
+  height: 550px;
   background: #ffffffa1;
   border-radius: 20px;
 
@@ -129,6 +138,7 @@ body {
 .ctk {
   font-family: "Baloo Tammudu 2", cursive;
   font-size: 1.5rem;
+  text-align: justify;
 }
 
 .head {
@@ -280,28 +290,7 @@ footer p {
   #sss {
     margin: auto;
   }
-
-  #about {
-    flex-direction: column;
-    height: 700px;
-    width: 85%;
-    margin: 20px auto 5px auto;
-    /* transition: width 1s; */
-  }
-  /* #about:hover {
-    transform: scale(1.02, 1.02);
-    width: 90%;
-    transition-timing-function: ease-in-out;
-  } */
-  .about-text {
-    height: 501px;
-    width: 80%;
-    margin: auto;
-  }
-  #about img {
-    height: 250px;
-    margin: 40px;
-  }
+ 
   .social {
     display: none;
   }
@@ -316,6 +305,38 @@ footer p {
     /* margin-: 45px; */
   }
 }
+
+@media screen and (max-width: 1200px) {
+  #about {
+    flex-direction: column;
+    height: 800px;
+    width: 95%;
+    margin: 40px auto 5px auto;
+    /* transition: width 1s; */
+
+
+  }
+  .about-text {
+    /* height: 501px; */
+    width: 80%;
+    margin: auto;
+  }
+  #about img {
+    height: 250px;
+    margin: 40px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #about {
+   
+    height: 1000px;
+    width: 90%;
+  
+    /* transition: width 1s; */
+  }
+}
+
 @media screen and (max-width: 600px) {
   .card {
     width: 20rem !important;
@@ -347,7 +368,8 @@ footer p {
   }
   #about {
     transform: translateY(-5%);
-    height: 900px;
+    height: 1100px;
+    width: 95%;
   }
   #about img {
     height: 200px;
@@ -358,5 +380,13 @@ footer p {
   }
   #contact {
     height: 180px;
+
+  }
+ .ctk{
+   font-size: 1.4rem;
+ }
+  #resume{
+    width: 250px;
+    font-size: 1rem;
   }
 }
