@@ -160,12 +160,249 @@ body {
   width: 100%;
   font-family: "Baloo Tammudu 2", cursive;
 }
+/* .skills {
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-attachment: fixed;
+  font-size: 27px;
+  height: 950px;
+} */
 #skill {
   /* margin-top: 10px; */
   background-color: rgb(0, 0, 0) !important;
-  height: 500px;
+  height: 650px;
   width: 100%;
 }
+
+.skills h1 {
+  text-align: center;
+  color: rgb(181, 215, 243);
+}
+.skills h6 {
+  margin-top: 30px;
+  text-align: center;
+  color: rgb(250, 192, 255);
+}
+.cols {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: rgb(221, 233, 247);
+}
+.col1,
+.col2 {
+  width: 30%;
+  margin: 0 5%;
+}
+.skills li {
+  margin: 20px 0;
+  list-style-type: none;
+}
+.bar {
+  background: #353b48;
+  display: block;
+  height: 8px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.bar span {
+  height: 8px;
+  float: left;
+}
+
+.bar1 {
+  box-shadow: 0 0 12px #f58325d2;
+}
+.html {
+  background: #f58325;
+  width: 90%;
+  animation: html 2s;
+}
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+.bar2 {
+  box-shadow: 0 0 12px #255cf5a8;
+}
+.css {
+  background: #255cf5;
+  width: 90%;
+  animation: css 2s;
+}
+@keyframes css {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+.bar3 {
+  box-shadow: 0 0 12px #f5e725ce;
+}
+.javascript {
+  background: #f5e725;
+  width: 70%;
+  animation: javascript 2s;
+}
+@keyframes javascript {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+.bar4 {
+  box-shadow: 0 0 12px #cd09f0d7;
+}
+.nodejs {
+  background: #cd09f0;
+  width: 50%;
+  animation: nodejs 2s;
+}
+@keyframes nodejs {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 40%;
+  }
+}
+.bar5 {
+  box-shadow: 0 0 12px #56b7c0bd;
+}
+.mongodb {
+  background: #56b7c0;
+  width: 50%;
+  animation: mongodb 2s;
+}
+@keyframes mongodb {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 30%;
+  }
+}
+.bar6 {
+  box-shadow: 0 0 12px #94c3e9;
+}
+.cpp {
+  background: #94c3e9;
+  width: 85%;
+  animation: cpp 2s;
+}
+@keyframes cpp {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 85%;
+  }
+}
+.bar7 {
+  box-shadow: 0 0 12px #fa6aeec5;
+}
+
+@keyframes java {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 60%;
+  }
+}
+.bar8 {
+  box-shadow: 0 0 12px #ee7777df;
+}
+.oops {
+  background: #ee7777;
+  width: 70%;
+  animation: oops 2s;
+}
+@keyframes oops {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+.bar9 {
+  box-shadow: 0 0 12px #90c08cd0;
+}
+.dsa {
+  background: #93c28f;
+  width: 40%;
+  animation: dsa 2s;
+}
+@keyframes dsa {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 40%;
+  }
+}
+.bar10 {
+  box-shadow: 0 0 12px #7460bdd3;
+}
+.figma {
+  background: #7460bd;
+  width: 50%;
+  animation: figma 2s;
+}
+@keyframes figma {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+.bar11 {
+  box-shadow: 0 0 12px #94c3e9;
+}
+.react {
+  background: #94c3e9;
+  width: 66%;
+  animation: react 2s;
+}
+@keyframes react {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 25%;
+  }
+}
+.bar12 {
+  box-shadow: 0 0 12px #ee7777df;
+}
+.expressjs {
+  background: #ee7777;
+  width: 40%;
+  animation: expressjs 2s;
+}
+@keyframes expressjs {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 40%;
+  }
+}
+
 .progress-bar {
   background: rgba(0, 204, 0, 0.692) !important;
 }
@@ -328,7 +565,7 @@ footer p {
     display: none;
   }
   #skill {
-    height: 450px;
+    height: 600px;
   }
   .card {
     width: 40% !important;
@@ -404,13 +641,10 @@ footer p {
   #about img {
     height: 200px;
   }
-  #skill {
-    /* transform: translateY(-5%); */
-    height: 450px;
-  }
-  #contact {
+
+  /* #contact {
     height: 180px;
-  }
+  } */
   .ctk {
     font-size: 1.4rem;
   }
