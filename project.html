@@ -30,12 +30,6 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
-    body {
-      background-repeat: no-repeat;
-      background: black;
-    }
-
-
     .row1 {
       display: flex;
       flex-direction: row;
@@ -48,15 +42,16 @@
       margin-left: 10px;
       margin-right: 10px;
     }
-    .btn{
-      border-radius: 15px ;
+
+    .btn {
+      border-radius: 15px;
       background: black;
       box-shadow: inset 0px 5px 20px rgba(0, 0, 0, 0.25);
     }
 
-.btn:hover{
-background: rgb(50, 158, 0);
-}
+    .btn:hover {
+      background: rgb(50, 158, 0);
+    }
 
     .card {
       /* border-radius: 15px; */
@@ -101,184 +96,199 @@ background: rgb(50, 158, 0);
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav">
-    <a class="navbar-brand mx-4" href="https://gaurav147-star.github.io/"
-      style="font-size: 1.8rem !important;">Gaurav</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class="nav-home">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav">
+      <a class="navbar-brand mx-4" href="https://gaurav147-star.github.io/"
+        style="font-size: 1.8rem !important;">Gaurav</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto mx-5">
-        <li class="nav-item active mx-4">
-          <a class="nav-link hover-line" href="index.html#home">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active mx-4">
-          <a class="nav-link hover-line" href="index.html#about">About</a>
-        </li>
-        <li class="nav-item active mx-4">
-          <a class="nav-link hover-line" href="index.html#skill">Skills</a>
-        </li>
-        <li class="nav-item active mx-4">
-          <a class="nav-link hover-line" href="project.html">Projects</a>
-        </li>
-        <li class="nav-item active mx-4">
-          <a class="nav-link hover-line" href="#contact">Contact</a>
-        </li>
-    </div>
-  </nav>
-  <!-- <div class="row" style="margin: 0px 15rem !important;"> -->
-  <div class="pro"
-    style="background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);height: 100px;padding-top: 20px;">
-    <h1 style="text-align: center;font-family: 'Architects Daughter', cursive;
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mx-5">
+          <li class="nav-item active mx-4">
+            <a class="nav-link hover-line" href="index.html#home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active mx-4">
+            <a class="nav-link hover-line" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item active mx-4">
+            <a class="nav-link hover-line" href="index.html#skill">Skills</a>
+          </li>
+          <li class="nav-item active mx-4">
+            <a class="nav-link hover-line" href="project.html">Projects</a>
+          </li>
+          <li class="nav-item active mx-4">
+            <a class="nav-link hover-line" href="#contact">Contact</a>
+          </li>
+      </div>
+    </nav>
+    <!-- <div class="row" style="margin: 0px 15rem !important;"> -->
+    <div class="pro" style="color: rgb(226, 226, 226);height: 100px;padding-top: 20px;">
+      <h1 style="text-align: center;font-family: 'Architects Daughter', cursive;
     font-family: 'Caveat', cursive;
     font-family: 'Play', sans-serif;">My Projects</h1>
-  </div>
-  <div class="row1">
-    <div class="card" data-aos="fade-up-left" data-tilt>
-      <img class="card-img-top" src="./assets/notesapp.png" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title"><a href="https://ppnotesapp.herokuapp.com/">Notes-App</a></h4>
-        <p class="card-text">Notes-App is made using MERN Stack. In this app,you can save your notes and there is login and signup feature to secure your notes i.e only you can see your notes. </p>
-        <a href="https://github.com/gaurav147-star/NotesApp" class="btn btn-primary"
-           target="_blank"><i class="fab fa-github" aria-hidden="true">
-            <span style="margin:5px;">Github Repo</span>
-          </i></a>
-      </div>
     </div>
-    <div class="card" data-aos="fade-up-left" data-tilt>
-      <img class="card-img-top" src="https://github.com/gaurav147-star/Flipho_Chat_Room/blob/main/assets/flipho3.png?raw=true" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title"><a href="https://chatapp-e2bfc.web.app/">Flipho_Chat_Room</a></h4>
-        <p class="card-text">An Flipho_Chat_Room website is made using MERN stack. In this app, i use firebase for google authentication and for hosting. Pusher is use for realtime chat.</p>
-        <a href="https://github.com/gaurav147-star/Flipho_Chat_Room" class="btn btn-primary"
-           target="_blank"><i class="fab fa-github" aria-hidden="true">
-            <span style="margin:5px;">Github Repo</span>
-          </i></a>
+    <div class="row1">
+      <div class="card" data-aos="fade-up-left" data-tilt>
+        <img class="card-img-top" src="./assets/notesapp.png" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title"><a href="https://ppnotesapp.herokuapp.com/">Notes-App</a></h4>
+          <p class="card-text">Notes-App is made using MERN Stack. In this app,you can save your notes and there is
+            login
+            and signup feature to secure your notes i.e only you can see your notes. </p>
+          <a href="https://github.com/gaurav147-star/NotesApp" class="btn btn-primary" target="_blank"><i
+              class="fab fa-github" aria-hidden="true">
+              <span style="margin:5px;">Github Repo</span>
+            </i></a>
+        </div>
       </div>
-    </div>
-    <div class="card" data-aos='fade-right' data-tilt>
-      <img class="card-img-top" src="./assets/snake-blast.png" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title"><a href="https://gaurav147-star.github.io/Snake-Blast/" target="_blank">Snake-Blast</a>
-        </h4>
-        <p class="card-text">Snake-Blast is a famous game which we play in childhood. This game can be played on desktop using arrow keys. It is made using HTML,CSS and JS. Also used firebase to display the person's name with his high score.</p>
-        <a href="https://github.com/gaurav147-star/Snake-Blast" class="btn btn-primary"
-           target="_blank"><i class="fab fa-github" aria-hidden="true">
-            <span style="margin:5px;">Github Repo</span>
-          </i></a>
+      <div class="card" data-aos="fade-up-left" data-tilt>
+        <img class="card-img-top"
+          src="https://github.com/gaurav147-star/Flipho_Chat_Room/blob/main/assets/flipho3.png?raw=true"
+          alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title"><a href="https://chatapp-e2bfc.web.app/">Flipho_Chat_Room</a></h4>
+          <p class="card-text">An Flipho_Chat_Room website is made using MERN stack. In this app, i use firebase for
+            google authentication and for hosting. Pusher is use for realtime chat.</p>
+          <a href="https://github.com/gaurav147-star/Flipho_Chat_Room" class="btn btn-primary" target="_blank"><i
+              class="fab fa-github" aria-hidden="true">
+              <span style="margin:5px;">Github Repo</span>
+            </i></a>
+        </div>
       </div>
-    </div>
-    <div class="card" data-aos="fade-down" data-tilt>
-      <img class="card-img-top" src="./assets/react-todos-list.png" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title"><a href="https://todos-list-gg.netlify.app/" target="_blank">Todo-list in reactjs</a>
-        </h4>
-        <p class="card-text">Todo-list is a task management app to help you stay organized and manage your day-to-day task. This is made using ReactJs.</p>
-        <a href="https://github.com/gaurav147-star/todos-list_react-js" class="btn btn-primary"
-           target="_blank"><i class="fab fa-github" aria-hidden="true">
-            <span style="margin:5px;">Github Repo</span>
-          </i></a>
+      <div class="card" data-aos='fade-right' data-tilt>
+        <img class="card-img-top" src="./assets/snake-blast.png" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title"><a href="https://gaurav147-star.github.io/Snake-Blast/" target="_blank">Snake-Blast</a>
+          </h4>
+          <p class="card-text">Snake-Blast is a famous game which we play in childhood. This game can be played on
+            desktop
+            using arrow keys. It is made using HTML,CSS and JS. Also used firebase to display the person's name with his
+            high score.</p>
+          <a href="https://github.com/gaurav147-star/Snake-Blast" class="btn btn-primary" target="_blank"><i
+              class="fab fa-github" aria-hidden="true">
+              <span style="margin:5px;">Github Repo</span>
+            </i></a>
+        </div>
       </div>
-    </div>
-    <div class="card" data-aos="zoom-out-left" data-tilt>
-      <img class="card-img-top" src="./assets/weather.png" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title"><a href="https://apweather.netlify.app/" target="_blank">Weather-App</a></h4>
-        <p class="card-text">Weather-App provide a national and local weather forecast for cities. This is made using ReactJs and also used OpenWeatherMap API key which provides global weather data.</p>
-        <a href="https://github.com/gaurav147-star/Weather-app" class="btn btn-primary"
-           target="_blank"><i class="fab fa-github" aria-hidden="true">
-            <span style="margin:5px;">Github Repo</span>
-          </i></a>
+      <div class="card" data-aos="fade-down" data-tilt>
+        <img class="card-img-top" src="./assets/react-todos-list.png" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title"><a href="https://todos-list-gg.netlify.app/" target="_blank">Todo-list in reactjs</a>
+          </h4>
+          <p class="card-text">Todo-list is a task management app to help you stay organized and manage your day-to-day
+            task. This is made using ReactJs.</p>
+          <a href="https://github.com/gaurav147-star/todos-list_react-js" class="btn btn-primary" target="_blank"><i
+              class="fab fa-github" aria-hidden="true">
+              <span style="margin:5px;">Github Repo</span>
+            </i></a>
+        </div>
       </div>
-    </div>
-    <div class="card" data-aos="fade-up" data-tilt>
-      <img class="card-img-top" src="./assets/New-App.png" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title"><a href="https://github.com/gaurav147-star/News-App">News-App</a></h4>
-        <p class="card-text">News-App is made using ReactJs and also using newsapi. This App provides the latest news for distinct field. This app only work in localhost because newsapi provide free for localhost only.</p>
-        <a href="https://github.com/gaurav147-star/News-App" class="btn btn-primary"
-           target="_blank"><i class="fab fa-github" aria-hidden="true">
-            <span style="margin:5px;">Github Repo</span>
-          </i></a>
+      <div class="card" data-aos="zoom-out-left" data-tilt>
+        <img class="card-img-top" src="./assets/weather.png" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title"><a href="https://apweather.netlify.app/" target="_blank">Weather-App</a></h4>
+          <p class="card-text">Weather-App provide a national and local weather forecast for cities. This is made using
+            ReactJs and also used OpenWeatherMap API key which provides global weather data.</p>
+          <a href="https://github.com/gaurav147-star/Weather-app" class="btn btn-primary" target="_blank"><i
+              class="fab fa-github" aria-hidden="true">
+              <span style="margin:5px;">Github Repo</span>
+            </i></a>
+        </div>
       </div>
-    </div>
-    <div class="card" data-aos="fade-up" data-tilt>
-      <img class="card-img-top" src="./assets/cardgen.png" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title"><a href="https://profilecardgen.netlify.app/">Profile-Card generator</a></h4>
-        <p class="card-text">Profile-Card generator, is a card which takes your Information and display it. It is made using ReactJs and firebase which stores all the information and fetch it in web app.</p>
-        <a href="https://github.com/gaurav147-star/profile-card" class="btn btn-primary" 
-           target="_blank"><i class="fab fa-github" aria-hidden="true">
-            <span style="margin:5px;">Github Repo</span>
-          </i></a>
+      <div class="card" data-aos="fade-up" data-tilt>
+        <img class="card-img-top" src="./assets/New-App.png" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title"><a href="https://github.com/gaurav147-star/News-App">News-App</a></h4>
+          <p class="card-text">News-App is made using ReactJs and also using newsapi. This App provides the latest news
+            for distinct field. This app only work in localhost because newsapi provide free for localhost only.</p>
+          <a href="https://github.com/gaurav147-star/News-App" class="btn btn-primary" target="_blank"><i
+              class="fab fa-github" aria-hidden="true">
+              <span style="margin:5px;">Github Repo</span>
+            </i></a>
+        </div>
       </div>
-    </div>
-    
-    <div class="card" data-aos="fade-up-left" data-tilt>
-      <img class="card-img-top" src="./assets/texttestapp.png" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title"><a href="https://texttestapp.netlify.app/">Textapp</a></h4>
-        <p class="card-text">Textapp is made using ReactJs. It converts text to upperCase or lowerCase, removes extra spaces, copy the text and also count the number of characters and words.</p>
-        <a href="https://github.com/gaurav147-star/Text-App" class="btn btn-primary"
-           target="_blank"><i class="fab fa-github" aria-hidden="true">
-            <span style="margin:5px;">Github Repo</span>
-          </i></a>
+      <div class="card" data-aos="fade-up" data-tilt>
+        <img class="card-img-top" src="./assets/cardgen.png" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title"><a href="https://profilecardgen.netlify.app/">Profile-Card generator</a></h4>
+          <p class="card-text">Profile-Card generator, is a card which takes your Information and display it. It is made
+            using ReactJs and firebase which stores all the information and fetch it in web app.</p>
+          <a href="https://github.com/gaurav147-star/profile-card" class="btn btn-primary" target="_blank"><i
+              class="fab fa-github" aria-hidden="true">
+              <span style="margin:5px;">Github Repo</span>
+            </i></a>
+        </div>
       </div>
-    </div>
-    <div class="card" data-aos="fade-up-right" data-tilt>
-      <img class="card-img-top" src="./assets/clock.png" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title"><a href="https://gaurav147-star.github.io/Clock/">Digital and Analog Clock</a></h4>
-        <p class="card-text">Simple digital and analog clock which shows the time of India. It is made using simple HTML,CSS and JS.</p>
-        <a href="https://github.com/gaurav147-star/Clock" class="btn btn-primary"
-           target="_blank"><i class="fab fa-github" aria-hidden="true">
-            <span style="margin:5px;">Github Repo</span>
-          </i></a>
-      </div>
-    </div>
 
-  </div>
-  <hr style="background: rgba(0, 0, 0, 0.849);">
+      <div class="card" data-aos="fade-up-left" data-tilt>
+        <img class="card-img-top" src="./assets/texttestapp.png" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title"><a href="https://texttestapp.netlify.app/">Textapp</a></h4>
+          <p class="card-text">Textapp is made using ReactJs. It converts text to upperCase or lowerCase, removes extra
+            spaces, copy the text and also count the number of characters and words.</p>
+          <a href="https://github.com/gaurav147-star/Text-App" class="btn btn-primary" target="_blank"><i
+              class="fab fa-github" aria-hidden="true">
+              <span style="margin:5px;">Github Repo</span>
+            </i></a>
+        </div>
+      </div>
+      <div class="card" data-aos="fade-up-right" data-tilt>
+        <img class="card-img-top" src="./assets/clock.png" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title"><a href="https://gaurav147-star.github.io/Clock/">Digital and Analog Clock</a></h4>
+          <p class="card-text">Simple digital and analog clock which shows the time of India. It is made using simple
+            HTML,CSS and JS.</p>
+          <a href="https://github.com/gaurav147-star/Clock" class="btn btn-primary" target="_blank"><i
+              class="fab fa-github" aria-hidden="true">
+              <span style="margin:5px;">Github Repo</span>
+            </i></a>
+        </div>
+      </div>
 
-  <footer id="contact"
-    style="background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);padding-top: 45px;height: 245px;">
-    <!--heading-->
-    <div class="cont">
-      <p>Contact Me</p>
     </div>
-    <br />
-    <div class="social-icon">
-      <a href="#"><i class="fas fa-envelope"></i></a>
-    </div>
-    <!-- <br /> -->
-    <div class="mail">
-      <p>gauravgupta9158@gmail.com</p>
-    </div>
-    <!--social-->
-    <div class="social-icons">
-      <a href="https://github.com/gaurav147-star" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://twitter.com/GauGupta147" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/gaurav07gupta/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/gaurav-gupta-b913aa202/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <script>
-    AOS.init({
-      duration: 1200,
-    });
-  </script>
-  <script src="js/vanilla-tilt.js"></script>
+    <!-- <hr style="background: rgba(0, 0, 0, 0.849);"> -->
+
+    <footer id="contact"
+      ;padding-top: 45px;height: 245px;">
+      <!--heading-->
+      <div class="cont">
+        <p>Contact Me</p>
+      </div>
+      <br />
+      <div class="social-icon">
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+      <!-- <br /> -->
+      <div class="mail">
+        <p>gauravgupta9158@gmail.com</p>
+      </div>
+      <!--social-->
+      <div class="social-icons">
+        <a href="https://github.com/gaurav147-star" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/GauGupta147" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/gaurav07gupta/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/gaurav-gupta-b913aa202/" target="_blank"><i
+            class="fab fa-linkedin"></i></a>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script>
+      AOS.init({
+        duration: 1200,
+      });
+    </script>
+    <script src="js/vanilla-tilt.js"></script>
 </body>
 
 </html>
