@@ -420,7 +420,7 @@ body {
 
 #contact {
   margin: auto;
-  height: 250px;
+  height: 280px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -442,51 +442,62 @@ footer p {
 }
 
 .social-icon a {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e6e3e3;
-  margin: 0px 13px;
+  background-color: #ffffffec;
+  margin: 5px 5px;
+  margin-bottom: 10px;
   border-radius: 50%;
 }
 .social-icon a:hover {
+  text-decoration: none;
   background-color: #000000;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
   transition: all ease 0.5s;
+  transform: translateY(-5px);
+  text-shadow: 1px 1px 2px #222;
 }
 .social-icon i {
-  color: #000000;
+  text-decoration: none;
+  color: #000000f6;
 }
 .social-icon a:hover i {
   color: #ffffff;
   transition: all ease 0.5s;
+  
 }
 .social-icons {
   margin: 0px;
 }
 .social-icons a {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e6e3e3;
-  margin: 15px 13px;
+  background-color: #ffffffec;
+  margin: 10px 17px;
+  margin-bottom: 30px;
   border-radius: 50%;
 }
 .social-icons {
   display: flex;
 }
+
 .social-icons i,
 .social i {
   color: #000000;
 }
 .social-icons a:hover {
   background-color: #000000;
+  text-decoration: none;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
   transition: all ease 0.5s;
+  transform: translateY(-5px);
+  text-shadow: 1px 1px 2px #222;
 }
 .social-icons a:hover i,
 .social a:hover i {
