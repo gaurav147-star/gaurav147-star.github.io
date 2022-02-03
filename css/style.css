@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@600&family=Play&display=swap');
 * {
   margin: 0px;
   padding: 0px;
@@ -428,26 +429,52 @@ body {
   background-color: #d7d7d7;
 }
 footer p {
-  font-family: calibri;
+  font-family: ;
 }
+
+.maili {
+  display: flex;
+  flex-direction: row;
+  /* margin: auto; */
+  transform: translateY(-15px);
+
+}
+.phni {
+  display: flex;
+  flex-direction: row;
+  /* margin: auto; */
+  margin-top: 10px;
+  margin-right: 35px;
+
+}
+.phn {
+  margin-top: 10px;
+  /* margin-left: 5px; */
+}
+
 .cont p {
   font-size: 30px;
   font-weight: bold;
   color: #191919;
   line-height: 10px;
 }
-.mail p {
-  font-family: "Baloo Tammudu 2", cursive;
-  font-size: 20px;
+.mail {
+  margin-top: 10px;
+  /* margin-left: 5px; */
+
+}
+.mail p,.phn p {
+  font-family: 'Play', sans-serif;
+  font-size: 15px;
 }
 
 .social-icon a {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffffec;
+  background-color: #ffffff00;
   margin: 5px 5px;
   margin-bottom: 10px;
   border-radius: 50%;
@@ -467,7 +494,6 @@ footer p {
 .social-icon a:hover i {
   color: #ffffff;
   transition: all ease 0.5s;
-  
 }
 .social-icons {
   margin: 0px;
