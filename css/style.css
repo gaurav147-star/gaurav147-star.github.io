@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@600&family=Play&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@600&family=Play&display=swap");
 * {
   margin: 0px;
   padding: 0px;
@@ -428,16 +428,15 @@ body {
   justify-content: center;
   background-color: #d7d7d7;
 }
-footer p {
+/* footer p {
   font-family: ;
-}
+} */
 
 .maili {
   display: flex;
   flex-direction: row;
   /* margin: auto; */
   transform: translateY(-15px);
-
 }
 .phni {
   display: flex;
@@ -445,7 +444,6 @@ footer p {
   /* margin: auto; */
   margin-top: 10px;
   margin-right: 35px;
-
 }
 .phn {
   margin-top: 10px;
@@ -453,7 +451,7 @@ footer p {
 }
 
 .cont p {
-  font-size: 30px;
+  font-size: 30px;transition: width 0.3s;
   font-weight: bold;
   color: #191919;
   line-height: 10px;
@@ -461,10 +459,10 @@ footer p {
 .mail {
   margin-top: 10px;
   /* margin-left: 5px; */
-
 }
-.mail p,.phn p {
-  font-family: 'Play', sans-serif;
+.mail p,
+.phn p {
+  font-family: "Play", sans-serif;
   font-size: 15px;
 }
 
@@ -524,6 +522,7 @@ footer p {
   transition: all ease 0.5s;
   transform: translateY(-5px);
   text-shadow: 1px 1px 2px #222;
+  /* text-decoration: none; */
 }
 .social-icons a:hover i,
 .social a:hover i {
@@ -553,6 +552,7 @@ footer p {
 .social a:hover {
   background-color: #000000;
   transition: all ease 0.5s;
+  text-decoration: none;
 }
 .social i {
   font-size: 20px;
@@ -587,7 +587,6 @@ footer p {
   }
   .nav-link {
     color: rgb(0, 0, 0) !important;
-
   }
   #sss p:nth-child(1) {
     color: #d3d3d3;
