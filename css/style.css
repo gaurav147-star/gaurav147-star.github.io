@@ -575,6 +575,10 @@ footer p {
     border: 5px solid rgba(255, 255, 255, 0.774);
     border-radius: 4px;
   }
+  .hover-line:hover::after {
+    width: 20%;
+    transition: width 0.3s;
+  }
   #sss {
     margin: auto;
   }
