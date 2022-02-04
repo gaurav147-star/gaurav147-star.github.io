@@ -583,10 +583,11 @@ footer p {
     margin: auto;
   }
   #nav {
-    background: #d7d7d7 !important;
+    background: #d7d7d791 !important;
   }
   .nav-link {
-    color: black !important;
+    color: rgb(0, 0, 0) !important;
+
   }
   #sss p:nth-child(1) {
     color: #d3d3d3;
