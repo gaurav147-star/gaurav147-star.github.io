@@ -1,0 +1,9 @@
+.home{
+    background: rgba(230, 230, 230, 0.832);
+    width: 100%;
+    height: 100vh;
+}
+.home__model {
+  width: 50%;
+  height: 50%;
+}

@@ -1,39 +1,34 @@
 
 import './App.css';
 import Navbar from './components/Navbar';
-import Home from './components/Pages/Home';
-import About from './components/Pages/About';
-import Skill from './components/Pages/Skill';
-import Project from './components/Pages/Project';
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import Skill from './pages/Skills/Skill';
+import Project from './pages/Projects/Project';
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter,
+  Routes,
   Route
 } from "react-router-dom";
 import Contact from './components/Contact';
 
-function App() {
+const App = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Navbar />
-      <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/skill">
-          <Skill />
-        </Route>
-        <Route path="/project">
-          <Project />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/skill" element={<Skill />} />
+
+      </Routes>
       <Contact />
 
-    </Router>
-  );
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
+
+
