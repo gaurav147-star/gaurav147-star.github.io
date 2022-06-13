@@ -1,0 +1,115 @@
+.contact {
+  margin: auto;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #08090c;
+  padding-top: 25px;
+}
+
+.maili {
+  display: flex;
+  flex-direction: row;
+  /* margin: auto; */
+  transform: translateY(-15px);
+}
+.phni {
+  display: flex;
+  flex-direction: row;
+  /* margin: auto; */
+  margin-top: 10px;
+  margin-right: 35px;
+}
+.phn {
+  margin-top: 10px;
+  /* margin-left: 5px; */
+}
+
+.cont p {
+  font-size: 30px;
+  transition: width 0.3s;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 10px;
+}
+.mail {
+  margin-top: 10px;
+  /* margin-left: 5px; */
+}
+.mail p,
+.phn p {
+  font-family: "Play", sans-serif;
+  font-size: 15px;
+  color: white;
+}
+
+.social-icon a {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #ffffff; */
+  margin: 5px 5px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+.social-icon a:hover {
+  text-decoration: none;
+  /* background-color: #000000; */
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  transition: all ease 0.5s;
+  transform: translateY(-5px);
+  text-shadow: 1px 1px 2px #222;
+}
+.social-icon i {
+  text-decoration: none;
+  color: #fffffff6;
+}
+.social-icon a:hover i {
+  color: #ffffff;
+  transition: all ease 0.5s;
+}
+
+.socialicons {
+    margin: 0px;
+  }
+  .socialicons a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffffec;
+    margin: 0px 12px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+  }
+  .socialicons {
+    display: flex;
+  }
+  
+  .socialicons i {
+    color: #000000;
+  }
+  .socialicons a:hover {
+    background-color: #000000;
+    text-decoration: none;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    transition: all ease 0.5s;
+    transform: translateY(-5px);
+    text-shadow: 1px 1px 2px #222;
+    /* text-decoration: none; */
+  }
+  .socialicons a:hover i,
+  .social a:hover i {
+    color: #ffffff;
+    transition: all ease 0.5s;
+  }
+
+  .cpyright{
+    color: rgba(255, 255, 255, 0.721);
+    font-size: 0.8rem;
+  }

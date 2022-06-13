@@ -8,23 +8,27 @@ import Project from './pages/Projects/Project';
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route,
+  useLocation
 } from "react-router-dom";
 import Contact from './components/Contact';
 
+
 const App = () => {
+
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/project" element={<Project />} />
-        <Route path="/skill" element={<Skill />} />
+      <div className="app">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/skill" element={<Skill />} />
 
-      </Routes>
-      <Contact />
-
+        </Routes>
+        <Contact />
+      </div>
     </BrowserRouter>
   )
 }
