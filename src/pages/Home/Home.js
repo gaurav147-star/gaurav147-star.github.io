@@ -1,12 +1,14 @@
 import React from 'react'
 import './Home.css';
 import Model from '../../assets/logo3.png'
-import Typewriter from 'typewriter-effect';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import Typewriter from 'typewriter-effect';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
-const Home = () => {
+import Typewriter from '../../components/Try';
 
+
+const Home = () => {
+  
   return (
     <div className="home">
       <div className="home__con">
@@ -16,17 +18,8 @@ const Home = () => {
         <div>
           <h1>Hello, </h1>
           <h1>I&#8217;m <b style={{ color: "#ec5707" }}> Gaurav Gupta</b> </h1>
-          <h3 style={{ display: "flex", color: "rgba(220, 220, 220, 0.824)" }}><ArrowRightIcon fontSize='large' style={{ margin: "3px 0px" }} />
-            <Typewriter
-              options={{
-                autoStart: true,
-                loop: true,
-                delay: 40,
-                strings: [
-                  "Front End Developer", "Back End Developer", "Competitive Coder", "Tech Enthusiast", "Linux User", "Chai lover"
-                ]
-              }}
-            />
+          <h3 style={{ display: "flex", color: "rgba(220, 220, 220, 0.824)" }}><ArrowRightIcon fontSize='large' style={{ margin: "2px 0px" }} />
+            <Typewriter/>
           </h3>
           <div className="social-icons">
             <a href="https://github.com/gaurav147-star" target="_blank" rel="noreferrer"><i className="fab fa-github fa-lg gt"></i></a>

@@ -8,8 +8,7 @@ import Project from './pages/Projects/Project';
 import {
   BrowserRouter,
   Routes,
-  Route,
-  useLocation
+  Route
 } from "react-router-dom";
 import Contact from './components/Contact';
 
