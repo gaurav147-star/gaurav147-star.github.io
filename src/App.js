@@ -1,5 +1,5 @@
 
-import './App.css';
+import './App.scss';
 import Navbar from './components/Navbar';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/project" element={<Project />} />
-          <Route path="/skill" element={<Skill />} />
+          <Route path="/experience" element={<Skill />} />
 
         </Routes>
         <Contact />

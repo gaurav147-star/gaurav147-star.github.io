@@ -1,5 +1,5 @@
 import React from 'react'
-import './Home.css';
+import './Home.scss';
 import Model from '../../assets/logo3.png'
 // import Typewriter from 'typewriter-effect';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';

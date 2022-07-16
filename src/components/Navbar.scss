@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@600&family=Lobster&family=Merriweather&family=Nunito+Sans&family=Play&family=Tapestry&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap");
+
+.navbar-main {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  transform: translateY(10px);
+  /* height: 100vh; */
+}
+
+.brand a:hover{
+  text-decoration: none;
+}
+
+.brand h1 {
+  font-size: 2.2rem;
+  /* text-transform: uppercase; */
+  color: white;
+}
+.brand h1 span {
+  color: rgba(255, 106, 0, 0.9);
+}
+.nav_bar {
+  /* border: 1px ridge white; */
+  /* transform: translateY(10px); */
+  border-radius: 50px;
+}
+.css-1aquho2-MuiTabs-indicator {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 184, 0, 0.9) 0%,
+    rgba(255, 0, 0, 0.9) 100%
+  ) !important;
+}
+.navTab {
+  /* font-family: "Architects Daughter", cursive;
+  font-family: "Caveat", cursive;
+  font-family: "Lobster", cursive;
+  font-family: "Merriweather", serif; */
+  /* font-family: "Nunito Sans", sans-serif;
+  font-family: "Play", sans-serif;
+  font-family: "Tapestry", cursive; */
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.css-ttwr4n {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 184, 0, 0.9) 0%,
+    rgba(255, 0, 0, 0.9) 100%
+  ) !important;
+}
