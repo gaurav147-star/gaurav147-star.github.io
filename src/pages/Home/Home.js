@@ -13,7 +13,7 @@ const Home = () => {
     <div className="home">
       <div className="home__con">
         <div className="logo">
-          <img src={Model} alt="" />
+          <img src={Model} alt="" className='animate-bounce '/>
         </div>
         <div>
           <h1>Hello, </h1>

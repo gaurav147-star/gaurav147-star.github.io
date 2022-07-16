@@ -16,13 +16,13 @@ const About = () => {
         </div>
         <div className="flex justify-center">
           <div className=" flex flex-col justify-center items-center lg:m-[100px] md:m-[30px]">
-            <h2 className="font-bold text-3xl text-white"> Hello.</h2>
-            <p className="text-lg text-white text-center">
+            <h2 className="font-bold text-3xl text-[#ff7700]"> Hello,</h2>
+            <p className="text-lg text-white text-center font-semibold">
               {" "}
               I am Gaurav Gupta and am currently pursuing a B.Tech with an
               emphasis in Information Technology at IIIT Bhopal.
             </p>
-            <p className="text-lg text-textBase text-center text-[#a3a0a0]">
+            <p className="text-lg text-textBase text-center text-[#ff7700eb]	font-medium">
               {" "}
               Besides being Club Secretary of the GNU/Linux Users Club IIIT
               Bhopal, I am also a member of the Codame Club IIIT Bhopal's Web
