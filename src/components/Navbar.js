@@ -13,6 +13,7 @@ import { StaticRouter } from "react-router-dom/server";
 import "./Navbar.scss";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { useEffect } from "react";
 const capitalizeFirstLetter = (string) => {
   if (string.slice(1) === "") {
     return "Home";
@@ -38,7 +39,20 @@ export default function CenteredTabs() {
   const handleNav = () => {
     setNav(!nav);
   };
+  const [navbar, setNavbar] = React.useState(false);
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
 
+  useEffect(() => {
+    changeBackground();
+    // adding the event when scroll change background
+    window.addEventListener("scroll", changeBackground);
+  });
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -46,7 +60,7 @@ export default function CenteredTabs() {
   document.title = `${capitalizeFirstLetter(location.pathname)}-Portfolio`;
 
   return (
-    <div className="navbar-main">
+    <div className={navbar ? "navbar-main bgchange" : "navbar-main"}>
       <div className="brand">
         <RouterLink className="brand-link" to="/">
           <h1>
@@ -126,16 +140,36 @@ export default function CenteredTabs() {
 
         <ul className="pt-5 uppercase p-4">
           <li className="p-4 border-b border-gray-600 text-white">
-            <Link to="/" className="no-underline hover:no-underline hover:text-white">Home </Link>
+            <Link
+              to="/"
+              className="no-underline hover:no-underline hover:text-white"
+            >
+              Home{" "}
+            </Link>
           </li>
           <li className="p-4 border-b border-gray-600 text-white">
-            <Link to="/about" className="no-underline hover:no-underline hover:text-white">About </Link>
+            <Link
+              to="/about"
+              className="no-underline hover:no-underline hover:text-white"
+            >
+              About{" "}
+            </Link>
           </li>
           <li className="p-4 border-b border-gray-600 text-white">
-            <Link to="/project" className="no-underline hover:no-underline hover:text-white">Projects</Link>
+            <Link
+              to="/project"
+              className="no-underline hover:no-underline hover:text-white"
+            >
+              Projects
+            </Link>
           </li>
           <li className="p-4 border-b border-gray-600 text-white no-underline ">
-            <Link to="/experience" className="no-underline hover:no-underline hover:text-white">Experience </Link>
+            <Link
+              to="/experience"
+              className="no-underline hover:no-underline hover:text-white"
+            >
+              Experience{" "}
+            </Link>
           </li>
         </ul>
       </div>

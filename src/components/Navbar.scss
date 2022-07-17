@@ -2,18 +2,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap");
 
 .navbar-main {
-  position: fixed;
+  position: sticky;
   z-index: 1000;
   left: 0;
   top: 0;
-  width: 100vw;
+  // width: 100vw;
+  transition-duration: 500ms;
   display: flex;
   justify-content: space-around;
-  transform: translateY(10px);
+  padding: 10px;
   /* height: 100vh; */
 }
+.navbar-main.bgchange {
+  background-color: rgba(0, 0, 0, 0.792);
 
-.brand a:hover{
+  padding: 10px;
+  transition-duration: 500ms;
+ 
+}
+.brand a:hover {
   text-decoration: none;
 }
 

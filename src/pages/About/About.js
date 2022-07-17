@@ -17,12 +17,12 @@ const About = () => {
         <div className="flex justify-center">
           <div className=" flex flex-col justify-center items-center lg:m-[100px] md:m-[30px]">
             <h2 className="font-bold text-4xl text-white"> Hello,</h2>
-            <p className="text-[1.4rem] text-lg text-[#ff7700] text-justify font-semibold">
+            <p className="text-[1.4rem] text-lg text-[#ff7700] text-justify font-semibold  italic md:not-italic">
               {" "}
               I am Gaurav Gupta and am currently pursuing a B.Tech with an
               emphasis in Information Technology at IIIT Bhopal.
             </p>
-            <p className=" text-[1.4rem] text-lg text-textBase text-justify text-white	font-medium">
+            <p className=" text-[1.4rem] text-lg text-textBase text-justify text-white	font-medium italic md:not-italic">
               {" "}
               Besides being Club Secretary of the GNU/Linux Users Club IIIT
               Bhopal, I am also a Web Development Team member of the CODAME Club

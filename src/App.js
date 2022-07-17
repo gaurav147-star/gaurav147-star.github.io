@@ -3,7 +3,6 @@ import './App.scss';
 import Navbar from './components/Navbar';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-import Skill from './pages/Skills/Skill';
 import Project from './pages/Projects/Project';
 import {
   BrowserRouter,
@@ -11,6 +10,7 @@ import {
   Route
 } from "react-router-dom";
 import Contact from './components/Contact';
+import Experience from './pages/Experience/experience';
 
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/project" element={<Project />} />
-          <Route path="/experience" element={<Skill />} />
+          <Route path="/experience" element={<Experience/>} />
 
         </Routes>
         <Contact />
