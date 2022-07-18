@@ -16,7 +16,7 @@ const About = () => {
         </div>
         <div className="flex justify-center">
           <div className=" flex flex-col justify-center items-center lg:m-[100px] md:m-[30px]">
-            <h2 className="font-bold text-4xl text-white"> Hello,</h2>
+            <h2 className="font-bold text-4xl text-white italic md:not-italic"> Hello,</h2>
             <p className="text-[1.4rem] text-lg text-[#ff7700] text-justify font-semibold  italic md:not-italic">
               {" "}
               I am Gaurav Gupta and am currently pursuing a B.Tech with an
