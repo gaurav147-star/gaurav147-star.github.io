@@ -63,12 +63,12 @@ export default function CenteredTabs() {
     <div className={navbar ? "navbar-main bgchange" : "navbar-main"}>
       <div className="brand">
         <RouterLink className="brand-link" to="/">
-          <h1>
+          <h1 className="md:ml-5 lg:ml-12">
             <span>G</span>aurav <span>G</span>upta
           </h1>
         </RouterLink>
       </div>
-      <Box className="nav_bar hidden md:flex" sx={{ width: "60%" }}>
+      <Box className="nav_bar hidden md:flex" sx={{ width: "66%" }}>
         <Tabs value={value} onChange={handleChange} centered>
           <Tab
             className="nav_bartabs"
