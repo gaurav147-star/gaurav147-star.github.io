@@ -143,6 +143,7 @@ export default function CenteredTabs() {
             <Link
               to="/"
               className="no-underline hover:no-underline hover:text-white"
+              onClick={handleNav}
             >
               Home{" "}
             </Link>
@@ -151,6 +152,7 @@ export default function CenteredTabs() {
             <Link
               to="/about"
               className="no-underline hover:no-underline hover:text-white"
+              onClick={handleNav}
             >
               About{" "}
             </Link>
@@ -159,6 +161,7 @@ export default function CenteredTabs() {
             <Link
               to="/project"
               className="no-underline hover:no-underline hover:text-white"
+              onClick={handleNav}
             >
               Projects
             </Link>
@@ -167,6 +170,7 @@ export default function CenteredTabs() {
             <Link
               to="/experience"
               className="no-underline hover:no-underline hover:text-white"
+              onClick={handleNav}
             >
               Experience{" "}
             </Link>

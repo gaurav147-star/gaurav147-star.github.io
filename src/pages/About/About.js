@@ -1,5 +1,7 @@
 import React from "react";
 import ME from "../../assets/me.jpeg";
+import Techstack from "../../components/Techstack";
+import Toolstack from "../../components/Toolstack";
 
 const About = () => {
   return (
@@ -16,7 +18,10 @@ const About = () => {
         </div>
         <div className="flex justify-center">
           <div className=" flex flex-col justify-center items-center lg:m-[100px] md:m-[30px]">
-            <h2 className="font-bold text-4xl text-white italic md:not-italic"> Hello,</h2>
+            <h2 className="font-bold text-4xl text-white italic md:not-italic">
+              {" "}
+              Hello,
+            </h2>
             <p className="text-[1.4rem] text-lg text-[#ff7700] text-justify font-semibold  italic md:not-italic">
               {" "}
               I am Gaurav Gupta and am currently pursuing a B.Tech with an
@@ -26,17 +31,24 @@ const About = () => {
               {" "}
               Besides being Club Secretary of the GNU/Linux Users Club IIIT
               Bhopal, I am also a Web Development Team member of the CODAME Club
-              IIIT Bhopal. My knack for understanding and identifying
-              trending patterns and developments comes from my passion to learn.
-              I am fascinated by workplaces with positive and productive
-              atmospheres, as well as team morale. In turn, this motivates me to
-              work hard and put in extra effort every day as a loyal team
-              member. I enjoy listening to people's ideas and have good
-              communication skills.
+              IIIT Bhopal. My knack for understanding and identifying trending
+              patterns and developments comes from my passion to learn. I am
+              fascinated by workplaces with positive and productive atmospheres,
+              as well as team morale. In turn, this motivates me to work hard
+              and put in extra effort every day as a loyal team member. I enjoy
+              listening to people's ideas and have good communication skills.
             </p>
           </div>
         </div>
       </div>
+      <h1 className="text-center text-white text-3xl my-3">
+        Professional <strong className="text-[#ff7700]">Skillset </strong>
+      </h1>
+      <Techstack />
+      <h1 className="text-center text-white text-3xl my-3">
+        <strong className="text-[#ff7700]">Tools</strong> I use
+      </h1>
+      <Toolstack/>
     </div>
   );
 };

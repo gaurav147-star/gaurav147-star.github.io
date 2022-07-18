@@ -28,3 +28,37 @@
   overflow: hidden;
   height: 100vh;
 }
+
+.tech-icons {
+  font-size: 4.5em !important;
+  margin: 15px !important;
+  padding: 10px !important;
+  opacity: 0.93 !important;
+  border: 1.7px solid #ff7700 !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  border-radius: 5px !important;
+  display: table !important;
+  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
+  overflow: hidden !important;
+  transition: all 0.4s ease 0s !important;
+  background: rgba(99, 99, 99, 0.442);
+  color: rgba(255, 255, 255, 0.874);
+  
+}
+
+@media (max-width: 767px) {
+  .tech-icons {
+    margin: 10px !important;
+  }
+}
+
+.tech-icons:hover {
+  transform: scale(1.05) !important;
+  overflow: hidden !important;
+  border: 2.2px solid #ff7700 !important;
+}
+.tech-icon-images {
+  padding: 10px !important;
+  line-height: 1.6 !important;
+}

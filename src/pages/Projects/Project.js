@@ -5,8 +5,9 @@ import { AllProjects } from "../../assets/data/projects";
 const Project = () => {
   return (
     <div className="flex flex-col items-center justify-center py-[80px] md:py-[100px] ">
-      <h1 className="flex flex-col items-center justify-center mb-[50px] text-white text-4xl">
-        Projects
+      <h1 className="flex items-center justify-center mb-[50px] text-white text-5xl">
+        <span className="text-[#ff7700]"> Pr</span>oj{" "}
+        <span className="text-[#ff7700]"> ec</span>ts
       </h1>
       <div class="flex flex-wrap items-center justify-center gap-4">
         {AllProjects.map((project) => (
