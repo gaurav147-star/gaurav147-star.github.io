@@ -12,7 +12,7 @@ const Experience = () => {
           v-for="card in cards"
           key={item.id}
           class="flex flex-col md:flex-row overflow-hidden
-                                      bg-white rounded-lg shadow-xl  mt-4 w-100 "
+                                      bg-white rounded-lg shadow-xl  mt-4 w-100 hover:scale-110 hover:duration-500 hover:ease-in-out"
         >
           <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
             <h3 class="font-semibold text-lg leading-tight truncate">
