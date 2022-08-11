@@ -1,15 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { AllProjects } from "../../assets/data/projects";
 
 const Project = () => {
+  // const [searchProject, setSearchProject] = useState("");
+
   return (
     <div className="flex flex-col items-center justify-center py-[50px] md:py-[50px] ">
       <h1 className="flex items-center justify-center mb-[50px] text-white text-5xl font-semibold">
         <span className="text-[#ff7700]"> Pr</span>oj{" "}
         <span className="text-[#ff7700]"> ec</span>ts
       </h1>
-      <div class="flex flex-wrap items-center justify-center gap-4">
+      {/* <input
+        value={searchProject}
+        onChange={(e) => setSearchProject(e.target.value)}
+        type="text"
+        className="mb-10 w-1/3 h-10 rounded-md bg-gray-700 text-white outline-none px-3 py-4"
+        placeholder="project like reactjs,mern"
+      /> */}
+      <div className="flex flex-wrap items-center justify-center gap-4">
         {AllProjects.map((project) => (
           <div
             className=" flex flex-col p-2 m-2 transform rotate-[3deg] hover:rotate-0 duration-500 hover:border-2 hover:border-x-[#ff7700]"
@@ -24,12 +33,16 @@ const Project = () => {
                 />
               </div>
               <div className="bg-[#121316] p-4 flex-1 flex flex-col">
-                <h3 className="mb-4 text-2xl font-bold text-[#ff7700]">{project.title}</h3>
+                <h3 className="mb-4 text-2xl font-bold text-[#ff7700]">
+                  {project.title}
+                </h3>
                 <div className="mb-4 text-grey-darker text-sm flex-1">
-                  <p className="text-[18px] font-semibold text-white">Technologies</p>
-                  <div class="w-[300px] py-3 flex flex-wrap  ">
+                  <p className="text-[18px] font-semibold text-white">
+                    Technologies
+                  </p>
+                  <div className="w-[300px] py-3 flex flex-wrap  ">
                     {project.tag.map((tags) => (
-                      <div class=" bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 uppercase">
+                      <div className=" bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 uppercase">
                         {tags}
                       </div>
                     ))}

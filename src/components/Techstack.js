@@ -9,7 +9,8 @@ import {
   DiPython,
   DiGit,
 } from "react-icons/di";
-import { SiPytorch, SiFirebase, SiTailwindcss } from "react-icons/si";
+import { SiFirebase, SiTailwindcss } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 
 function Techstack() {
   return (
@@ -37,6 +38,9 @@ function Techstack() {
       </Col>
       <Col xs={5} md={1} className="tech-icons">
         <SiFirebase />
+      </Col>
+      <Col xs={5} md={1} className="tech-icons">
+        <TbBrandNextjs />
       </Col>
     </Row>
   );
