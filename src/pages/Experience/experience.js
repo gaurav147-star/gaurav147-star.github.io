@@ -3,8 +3,8 @@ import { exp } from "../../assets/data/experience";
 
 const Experience = () => {
   return (
-    <div class="container w-full mb-20 md:h-full lg:w-2/5 mx-auto flex flex-col mt-[40px] md:mt-[60px]">
-      <h1 className="flex items-center justify-center mb-[30px] text-white text-5xl font-semibold">
+    <div class="container w-full mb-20 md:h-full lg:w-2/5 mx-auto flex flex-col mt-[30px] md:mt-[50px]">
+      <h1 className="flex items-center justify-center mb-[20px] text-white text-5xl font-semibold">
         Exper <span className="text-[#ff7700]"> ience</span>
       </h1>
       {exp.map((item) => (
