@@ -1,6 +1,6 @@
 import React from "react";
 import { exp } from "../../assets/data/experience";
-
+import Bla from "../../assets/codame.png";
 const Experience = () => {
   return (
     <div class="container w-full mb-20 md:h-full lg:w-2/5 mx-auto flex flex-col mt-[30px] md:mt-[50px]">
@@ -15,12 +15,26 @@ const Experience = () => {
                                       bg-white rounded-lg shadow-xl  mt-4 w-100 hover:scale-110 hover:duration-500 hover:ease-in-out"
         >
           <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
-            <h3 class="font-semibold text-lg leading-tight truncate">
-              {item.position}
-            </h3>
-            <p class="font-semibold text-[0.9rem] pt-1 leading-tight truncate">
-              {item.title}
-            </p>
+            <div className="flex flex-row justify-between">
+              <div className="">
+                <h3 class="font-semibold text-lg leading-tight truncate">
+                  {item.position}
+                </h3>
+                <p class="font-semibold text-[0.9rem] pt-1 leading-tight truncate">
+                  {item.title}
+                </p>
+              </div>
+              <div className="">
+                {item.image && (
+                  <img
+                    className="h-[50px] w-[50px]"
+                    src={`${require("../../assets/" + item.image + ".png")}`}
+                    alt="aa"
+                    srcset=""
+                  />
+                )}
+              </div>
+            </div>
             <p class="mt-2">{item.desc}</p>
             <p class="text-sm text-gray-500 uppercase tracking-wide font-semibold mt-2">
               {item.date}
