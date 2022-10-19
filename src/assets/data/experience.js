@@ -4,7 +4,7 @@ export const exp = [
     position: "ReactJs Developer",
     title: "AwesomeSuite (Internship)",
     desc: "Currently working as a ReactJS frontend developer, using Redux and integrating with APIs",
-    date: "May 2022-Present",
+    date: "May 2022-October 2022",
     image: "awesomesuite",
   },
   {
