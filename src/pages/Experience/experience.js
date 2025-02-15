@@ -1,11 +1,17 @@
 import React from "react";
 import { exp } from "../../assets/data/experience";
-import { FiBriefcase, FiCalendar, FiMapPin, FiArrowRight } from "react-icons/fi";
+import {
+  FiBriefcase,
+  FiCalendar,
+  FiMapPin,
+  FiArrowRight,
+} from "react-icons/fi";
 
 const ExperienceCard = ({ item, index }) => (
   <div className="group">
     {/* Main Card */}
-    <div className="
+    <div
+      className="
       relative
       grid md:grid-cols-[1fr,2fr]
       bg-neutral-900/50
@@ -16,25 +22,30 @@ const ExperienceCard = ({ item, index }) => (
       transition-all duration-500
       hover:border-[#ff7700]/20
       hover:shadow-2xl hover:shadow-black/20
-    ">
+    "
+    >
       {/* Left Section - Company Info */}
-      <div className="
+      <div
+        className="
         relative
         p-8
         bg-gradient-to-br from-neutral-900 to-black
         flex flex-col
         border-r border-white/5
-      ">
+      "
+      >
         {/* Company Logo */}
         {item.image && (
-          <div className="
+          <div
+            className="
             w-16 h-16 mb-6
             p-2.5
             bg-white/5
             rounded-xl
             transition-transform duration-500
             group-hover:scale-110
-          ">
+          "
+          >
             <img
               src={require(`../../assets/${item.image}.png`)}
               alt={item.title}
@@ -43,17 +54,17 @@ const ExperienceCard = ({ item, index }) => (
           </div>
         )}
 
-        <h3 className="
+        <h3
+          className="
           text-xl font-bold text-white mb-2
           group-hover:text-[#ff7700]
           transition-colors duration-300
-        ">
+        "
+        >
           {item.position}
         </h3>
-        
-        <p className="text-white/60 font-medium">
-          {item.title}
-        </p>
+
+        <p className="text-white/60 font-medium">{item.title}</p>
 
         <div className="mt-auto pt-6 flex items-center gap-2 text-white/40">
           <FiMapPin className="text-[#ff7700]" />
@@ -64,10 +75,12 @@ const ExperienceCard = ({ item, index }) => (
       {/* Right Section - Experience Details */}
       <div className="p-8 flex flex-col">
         <div className="flex-1">
-          <p className="
+          <p
+            className="
             text-white/70 leading-relaxed
             mb-6
-          ">
+          "
+          >
             {item.desc}
           </p>
 
@@ -94,50 +107,30 @@ const ExperienceCard = ({ item, index }) => (
         </div>
 
         {/* Date */}
-        <div className="
+        <div
+          className="
           mt-6 pt-6
           border-t border-white/5
           flex items-center justify-between
-        ">
+        "
+        >
           <div className="flex items-center gap-2 text-[#ff7700]">
             <FiCalendar />
-            <span className="text-sm font-medium">
-              {item.date}
-            </span>
+            <span className="text-sm font-medium">{item.date}</span>
           </div>
-
-          <FiArrowRight className="
-            text-white/20
-            transform translate-x-0
-            transition-all duration-300
-            group-hover:translate-x-2
-            group-hover:text-[#ff7700]
-          "/>
         </div>
       </div>
 
       {/* Hover Gradient Overlay */}
-      <div className="
+      <div
+        className="
         absolute inset-0
         bg-gradient-to-r from-[#ff7700]/0 via-[#ff7700]/5 to-transparent
         opacity-0 group-hover:opacity-100
         transition-opacity duration-500
         pointer-events-none
-      "/>
-    </div>
-
-    {/* Card Number */}
-    <div className="
-      absolute -left-4 top-8
-      w-8 h-8
-      bg-[#ff7700]
-      rounded-full
-      flex items-center justify-center
-      text-white text-sm font-bold
-      opacity-0 group-hover:opacity-100
-      transition-opacity duration-300
-    ">
-      {index + 1}
+      "
+      />
     </div>
   </div>
 );
@@ -148,24 +141,28 @@ const Experience = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="max-w-xl mb-20">
-          <div className="
+          <div
+            className="
             inline-flex items-center gap-2
             px-4 py-2 mb-6
             bg-[#ff7700]/10
             rounded-full
             border border-[#ff7700]/20
-          ">
+          "
+          >
             <FiBriefcase className="text-[#ff7700]" />
             <span className="text-sm text-[#ff7700] font-medium">
               Experience
             </span>
           </div>
 
-          <h1 className="
+          <h1
+            className="
             text-4xl md:text-5xl lg:text-6xl
             font-bold text-white
             leading-tight
-          ">
+          "
+          >
             My <span className="text-[#ff7700]">Journey</span>
           </h1>
         </div>
@@ -173,18 +170,17 @@ const Experience = () => {
         {/* Experience Cards */}
         <div className="space-y-8 relative">
           {/* Timeline Line */}
-          <div className="
+          <div
+            className="
             absolute left-8 top-0 bottom-0
             w-px
             bg-gradient-to-b from-[#ff7700]/0 via-[#ff7700]/20 to-[#ff7700]/0
-          "/>
+          "
+          />
 
           {exp.map((item, index) => (
-            <ExperienceCard 
-              key={item.id} 
-              item={item} 
-              index={index}
-            />
+              <ExperienceCard key={item.id} item={item} index={index} />
+              
           ))}
         </div>
       </div>

@@ -3,6 +3,7 @@ import ME from "../../assets/me.jpeg";
 import Techstack from "../../components/Techstack";
 import Toolstack from "../../components/Toolstack";
 import { FiDownload, FiArrowRight } from "react-icons/fi";
+import SkillsSection from "../../components/SkillsSection";
 
 const SectionTitle = ({ primary, secondary }) => (
   <div className="flex flex-col items-center gap-2 mb-12">
@@ -160,17 +161,7 @@ const About = () => {
         </section>
 
         {/* Skills Sections */}
-        <section className="space-y-24">
-          <div>
-            <SectionTitle primary="Professional" secondary="Skillset" />
-            <Techstack />
-          </div>
-
-          <div>
-            <SectionTitle primary="Tools" secondary="I use" />
-            <Toolstack />
-          </div>
-        </section>
+        <SkillsSection/>
       </div>
     </main>
   );

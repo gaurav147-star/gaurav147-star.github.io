@@ -97,6 +97,7 @@ const ProjectCard = ({ project, index }) => {
                 text-orange-500
                 transition-all duration-300
                 hover:scale-110
+                z-10
               "
             >
               <FiGithub className="text-xl" />
@@ -111,13 +112,13 @@ const ProjectCard = ({ project, index }) => {
                 text-orange-500
                 transition-all duration-300
                 hover:scale-110
+                z-10
               "
             >
               <FiExternalLink className="text-xl" />
             </a>
           </div>
         </div>
-
         {/* Glowing Effect */}
         <div className={`
           absolute inset-0 
@@ -125,7 +126,9 @@ const ProjectCard = ({ project, index }) => {
           transition-opacity duration-1000
           ${isHovered ? 'opacity-100' : 'opacity-0'}
           animate-gradient-x
+          -z-10
         `} />
+
       </div>
     </div>
   );
