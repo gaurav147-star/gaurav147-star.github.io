@@ -2,7 +2,6 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import PropTypes from "prop-types";
 import {
   Link as RouterLink,
   Link,
@@ -10,171 +9,112 @@ import {
   useLocation,
 } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
-import "./Navbar.scss";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { useEffect } from "react";
-const capitalizeFirstLetter = (string) => {
-  if (string.slice(1) === "") {
-    return "Home";
-  } else {
-    return string.charAt(1).toUpperCase() + string.slice(2);
-  }
-};
-function Router(props) {
-  const { children } = props;
-  if (typeof window === "undefined") {
-    return <StaticRouter location="/">{children}</StaticRouter>;
-  }
 
-  return <MemoryRouter>{children}</MemoryRouter>;
+const NAV_ITEMS = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Project", path: "/project" },
+  { label: "Experience", path: "/experience" },
+];
+
+const capitalizeFirstLetter = (string) => 
+  string.slice(1) === "" ? "Home" : string.charAt(1).toUpperCase() + string.slice(2);
+
+function Router({ children }) {
+  return typeof window === "undefined" ? (
+    <StaticRouter location="/">{children}</StaticRouter>
+  ) : (
+    <MemoryRouter>{children}</MemoryRouter>
+  );
 }
 
-Router.propTypes = {
-  children: PropTypes.node,
-};
-export default function CenteredTabs() {
+export default function Navbar() {
   const [value, setValue] = React.useState(0);
   const [nav, setNav] = React.useState(false);
-  const handleNav = () => {
-    setNav(!nav);
-  };
   const [navbar, setNavbar] = React.useState(false);
-  const changeBackground = () => {
-    if (window.scrollY >= 80) {
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
-  };
-
-  useEffect(() => {
-    changeBackground();
-    // adding the event when scroll change background
-    window.addEventListener("scroll", changeBackground);
-  });
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
   const location = useLocation();
-  document.title = `${capitalizeFirstLetter(location.pathname)}-Portfolio`;
+
+  React.useEffect(() => {
+    const changeBackground = () => {
+      setNavbar(window.scrollY >= 80);
+    };
+    
+    changeBackground();
+    window.addEventListener("scroll", changeBackground);
+    return () => window.removeEventListener("scroll", changeBackground);
+  }, []);
+
+  React.useEffect(() => {
+    document.title = `${capitalizeFirstLetter(location.pathname)}-Portfolio`;
+  }, [location.pathname]);
+
+  const commonTabStyles = "w-[140px] text-white text-lg no-underline";
+  const commonLinkStyles = "no-underline hover:no-underline hover:text-white";
 
   return (
-    <div className={navbar ? "navbar-main bgchange" : "navbar-main"}>
+    <div className={`sticky z-[1000] left-0 top-0 transition-all duration-500 flex justify-between p-2.5 
+      ${navbar ? 'bg-black/80' : ''}`}>
       <div className="brand">
-        <RouterLink className="brand-link" to="/">
-          <h1 className="md:ml-5 lg:ml-12">
-            <span>G</span>aurav <span>G</span>upta
+        <RouterLink to="/" className="hover:no-underline">
+          <h1 className="text-4xl text-white md:ml-5 lg:ml-12">
+            <span className="text-[rgba(255,106,0,0.9)]">G</span>aurav{' '}
+            <span className="text-[rgba(255,106,0,0.9)]">G</span>upta
           </h1>
         </RouterLink>
       </div>
-      <Box className="nav_bar hidden md:flex" sx={{ width: "66%" }}>
-        <Tabs value={value} onChange={handleChange} centered>
-          <Tab
-            className="nav_bartabs"
-            style={{
-              textDecoration: "none",
-              width: "140px",
-              color: "white",
-              fontSize: "1.1rem",
-            }}
-            label="Home"
-            component={RouterLink}
-            to="/"
-          />
-          <Tab
-            className="nav_bartabs"
-            style={{
-              textDecoration: "none",
-              width: "140px",
-              color: "white",
-              fontSize: "1.1rem",
-            }}
-            label="About"
-            component={RouterLink}
-            to="/about"
-          />
-          <Tab
-            className="nav_bartabs"
-            style={{
-              textDecoration: "none",
-              width: "140px",
-              color: "white",
-              fontSize: "1.1rem",
-            }}
-            label="Project"
-            component={RouterLink}
-            to="/project"
-          />
-          <Tab
-            className="nav_bartabs"
-            style={{
-              textDecoration: "none",
-              width: "140px",
-              color: "white",
-              fontSize: "1.1rem",
-            }}
-            label="Experience"
-            component={RouterLink}
-            to="/experience"
-          />
+
+      <Box className="hidden md:flex rounded-[50px] w-2/3">
+        <Tabs 
+          value={value} 
+          onChange={(_, newValue) => setValue(newValue)} 
+          centered
+          sx={{
+            '& .MuiTabs-indicator': {
+              background: 'linear-gradient(180deg, rgba(255,184,0,0.9) 0%, rgba(255,0,0,0.9) 100%)'
+            }
+          }}
+        >
+          {NAV_ITEMS.map((item) => (
+            <Tab
+              key={item.path}
+              className={commonTabStyles}
+              label={item.label}
+              component={RouterLink}
+              to={item.path}
+            />
+          ))}
         </Tabs>
       </Box>
-      <div onClick={handleNav} className="block md:hidden">
+
+      <div onClick={() => setNav(!nav)} className="block md:hidden">
         {nav ? (
           <CloseIcon sx={{ fontSize: 35, color: "white" }} />
         ) : (
           <MenuIcon sx={{ fontSize: 35, color: "white" }} />
         )}
       </div>
-      <div
-        className={
-          nav
-            ? "fixed left-0 rounded-md top-0 w-[70%] h-[600px] border-r border-r-gray-900 bg-[#000] ease-in-out duration-500"
-            : "fixed left-[-100%]"
-        }
-      >
+
+      {/* Mobile Menu */}
+      <div className={`fixed left-0 top-0 w-[70%] h-[600px] border-r border-r-gray-900 bg-black 
+        transition-all duration-500 ease-in-out ${nav ? 'translate-x-0' : '-translate-x-full'}`}>
         <h1 className="w-full text-3xl font-bold text-[#e16a00e6] m-4">
           Gaurav Gupta
         </h1>
 
         <ul className="pt-5 uppercase p-4">
-          <li className="p-4 border-b border-gray-600 text-white">
-            <Link
-              to="/"
-              className="no-underline hover:no-underline hover:text-white"
-              onClick={handleNav}
-            >
-              Home{" "}
-            </Link>
-          </li>
-          <li className="p-4 border-b border-gray-600 text-white">
-            <Link
-              to="/about"
-              className="no-underline hover:no-underline hover:text-white"
-              onClick={handleNav}
-            >
-              About{" "}
-            </Link>
-          </li>
-          <li className="p-4 border-b border-gray-600 text-white">
-            <Link
-              to="/project"
-              className="no-underline hover:no-underline hover:text-white"
-              onClick={handleNav}
-            >
-              Projects
-            </Link>
-          </li>
-          <li className="p-4 border-b border-gray-600 text-white no-underline ">
-            <Link
-              to="/experience"
-              className="no-underline hover:no-underline hover:text-white"
-              onClick={handleNav}
-            >
-              Experience{" "}
-            </Link>
-          </li>
+          {NAV_ITEMS.map((item) => (
+            <li key={item.path} className="p-4 border-b border-gray-600 text-white">
+              <Link
+                to={item.path}
+                className={commonLinkStyles}
+                onClick={() => setNav(false)}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

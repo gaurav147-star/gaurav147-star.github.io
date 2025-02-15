@@ -10,7 +10,7 @@ const MyComponent = () => {
   })
 
   return (
-    <div className='text-2xl mt-1'>
+    <div className='text-2xl mt-1 text-white'>
       <span>{text}</span>
       <Cursor />
     </div>
