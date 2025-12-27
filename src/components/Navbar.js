@@ -1,122 +1,99 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import {
-  Link as RouterLink,
-  Link,
-  MemoryRouter,
-  useLocation,
-} from "react-router-dom";
-import { StaticRouter } from "react-router-dom/server";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const NAV_ITEMS = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
-  { label: "Project", path: "/project" },
+  { label: "Projects", path: "/project" },
   { label: "Experience", path: "/experience" },
 ];
 
-const capitalizeFirstLetter = (string) => 
-  string.slice(1) === "" ? "Home" : string.charAt(1).toUpperCase() + string.slice(2);
-
-function Router({ children }) {
-  return typeof window === "undefined" ? (
-    <StaticRouter location="/">{children}</StaticRouter>
-  ) : (
-    <MemoryRouter>{children}</MemoryRouter>
-  );
-}
-
 export default function Navbar() {
-  const [value, setValue] = React.useState(0);
-  const [nav, setNav] = React.useState(false);
-  const [navbar, setNavbar] = React.useState(false);
-  const location = useLocation();
+  const [nav, setNav] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  React.useEffect(() => {
-    const changeBackground = () => {
-      setNavbar(window.scrollY >= 80);
-    };
-    
-    changeBackground();
-    window.addEventListener("scroll", changeBackground);
-    return () => window.removeEventListener("scroll", changeBackground);
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY >= 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  React.useEffect(() => {
-    document.title = `${capitalizeFirstLetter(location.pathname)}-Portfolio`;
-  }, [location.pathname]);
-
-  const commonTabStyles = "w-[140px] text-white text-lg no-underline";
-  const commonLinkStyles = "no-underline hover:no-underline hover:text-white";
-
   return (
-    <div className={`sticky z-[1000] left-0 top-0 transition-all duration-500 flex justify-between p-2.5 
-      ${navbar ? 'bg-black/80' : ''}`}>
-      <div className="brand">
-        <RouterLink to="/" className="hover:no-underline">
-          <h1 className="text-4xl text-white md:ml-5 lg:ml-12">
-            <span className="text-[rgba(255,106,0,0.9)]">G</span>aurav{' '}
-            <span className="text-[rgba(255,106,0,0.9)]">G</span>upta
-          </h1>
-        </RouterLink>
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-primary/80 backdrop-blur-md shadow-glow" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <NavLink to="/" className="flex items-center gap-2" onClick={() => window.scrollTo(0, 0)}>
+            <p className="text-white text-[18px] font-bold cursor-pointer flex">
+              Gaurav &nbsp;
+              <span className="sm:block hidden"> | AI Engineer</span>
+            </p>
+          </NavLink>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-8">
+              {NAV_ITEMS.map((item) => (
+                <NavLink
+                  key={item.label}
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? "text-neon-blue border-b-2 border-neon-blue scale-105"
+                        : "text-secondary hover:text-white"
+                    } px-3 py-2 text-sm font-medium transition-all duration-300`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setNav(!nav)}
+              className="text-white hover:text-neon-blue focus:outline-none"
+            >
+              {nav ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
+            </button>
+          </div>
+        </div>
       </div>
 
-      <Box className="hidden md:flex rounded-[50px] w-2/3">
-        <Tabs 
-          value={value} 
-          onChange={(_, newValue) => setValue(newValue)} 
-          centered
-          sx={{
-            '& .MuiTabs-indicator': {
-              background: 'linear-gradient(180deg, rgba(255,184,0,0.9) 0%, rgba(255,0,0,0.9) 100%)'
-            }
-          }}
-        >
+      {/* Mobile Menu Overlay */}
+      <motion.div
+        initial={{ height: 0 }}
+        animate={{ height: nav ? "auto" : 0 }}
+        className="md:hidden overflow-hidden bg-black-100/95 backdrop-blur-xl absolute w-full left-0 top-20 shadow-glass"
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
           {NAV_ITEMS.map((item) => (
-            <Tab
-              key={item.path}
-              className={commonTabStyles}
-              label={item.label}
-              component={RouterLink}
+            <NavLink
+              key={item.label}
               to={item.path}
-            />
+              onClick={() => setNav(false)}
+              className={({ isActive }) =>
+                `${
+                  isActive
+                    ? "text-neon-blue font-bold tracking-widest"
+                    : "text-gray-300 hover:text-white"
+                } block px-3 py-4 text-base font-medium transition-colors duration-300`
+              }
+            >
+              {item.label}
+            </NavLink>
           ))}
-        </Tabs>
-      </Box>
-
-      <div onClick={() => setNav(!nav)} className="block md:hidden">
-        {nav ? (
-          <CloseIcon sx={{ fontSize: 35, color: "white" }} />
-        ) : (
-          <MenuIcon sx={{ fontSize: 35, color: "white" }} />
-        )}
-      </div>
-
-      {/* Mobile Menu */}
-      <div className={`fixed left-0 top-0 w-[70%] h-[600px] border-r border-r-gray-900 bg-black 
-        transition-all duration-500 ease-in-out ${nav ? 'translate-x-0' : '-translate-x-full'}`}>
-        <h1 className="w-full text-3xl font-bold text-[#e16a00e6] m-4">
-          Gaurav Gupta
-        </h1>
-
-        <ul className="pt-5 uppercase p-4">
-          {NAV_ITEMS.map((item) => (
-            <li key={item.path} className="p-4 border-b border-gray-600 text-white">
-              <Link
-                to={item.path}
-                className={commonLinkStyles}
-                onClick={() => setNav(false)}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+        </div>
+      </motion.div>
+    </nav>
   );
 }

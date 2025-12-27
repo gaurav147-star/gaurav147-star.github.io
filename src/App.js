@@ -1,39 +1,56 @@
-import "./App.css";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home/Home";
-import About from "./pages/About/About";
-import Project from "./pages/Projects/Project";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Contact from "./components/Contact";
-import Experience from "./pages/Experience/experience";
-import { useEffect, useState } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import Preloader from "./components/pre";
+import ScrollToTop from "./components/ScrollToTop";
+import Layout from "./components/Layout";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import "./App.css";
+
+// Lazy Load Pages for Performance
+const Home = lazy(() => import("./pages/Home/Home"));
+const Project = lazy(() => import("./pages/Projects/Project"));
+const About = lazy(() => import("./pages/About/About"));
+const Experience = lazy(() => import("./pages/Experience/experience"));
+
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
 
 const App = () => {
-  const [load, upadateLoad] = useState(true);
+  const [load, updateLoad] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      upadateLoad(false);
+      updateLoad(false);
     }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <BrowserRouter>
-      <Preloader load={load} />
-      <div className="app" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/experience" element={<Experience />} />
-        </Routes>
-        <Contact />
-      </div>
-    </BrowserRouter>
+    <Router>
+       <Preloader load={load} />
+       <div className="App" id={load ? "no-scroll" : "scroll"}>
+         <ScrollToTop />
+         <Layout>
+           <Suspense fallback={<div className="h-screen w-full flex items-center justify-center text-neon-blue">Loading Galaxy...</div>}>
+             <AnimatedRoutes />
+           </Suspense>
+         </Layout>
+       </div>
+    </Router>
   );
 };
 

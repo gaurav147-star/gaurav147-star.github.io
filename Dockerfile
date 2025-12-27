@@ -1,16 +1,8 @@
 # Use Node.js LTS version
 FROM node:18-alpine
 
-# Install dependencies for node-sass
-RUN apk add --no-cache \
-    python3 \
-    python3-dev \
-    py3-pip \
-    py3-setuptools \
-    make \
-    g++ \
-    gcc \
-    libc-dev
+# Install dependencies
+# (No native deps needed for pure React+Tailwind)
 
 WORKDIR /app
 

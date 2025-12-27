@@ -1,190 +1,113 @@
-import React from "react";
-import { exp } from "../../assets/data/experience";
+import React, { useState } from "react";
 import {
-  FiBriefcase,
-  FiCalendar,
-  FiMapPin,
-  FiArrowRight,
-} from "react-icons/fi";
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { motion } from "framer-motion";
+import { exp } from "../../assets/data/experience";
+import AnimatedPage from "../../components/AnimatedPage";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
-const ExperienceCard = ({ item, index }) => (
-  <div className="group">
-    {/* Main Card */}
-    <div
-      className="
-      relative
-      grid md:grid-cols-[1fr,2fr]
-      bg-neutral-900/50
-      backdrop-blur-md
-      rounded-2xl
-      overflow-hidden
-      border border-white/5
-      transition-all duration-500
-      hover:border-[#ff7700]/20
-      hover:shadow-2xl hover:shadow-black/20
-    "
+ const ExperienceCard = ({ experience }) => {
+  const [expanded, setExpanded] = useState(false);
+  const visiblePoints = expanded ? experience.desc : experience.desc.slice(0, 2);
+
+  return (
+    <VerticalTimelineElement
+      contentStyle={{
+        background: "rgba(255, 255, 255, 0.05)",
+        color: "#fff",
+        backdropFilter: "blur(5px)",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
+        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+      }}
+      contentArrowStyle={{ borderRight: "7px solid  rgba(255, 255, 255, 0.05)" }}
+      date={experience.date}
+      iconStyle={{ background: experience.iconBg || "#030014" }}
+      icon={
+        <div className="flex justify-center items-center w-full h-full rounded-full overflow-hidden bg-black-100 border-2 border-neon-blue/20">
+          <img
+            src={require(`../../assets/${experience.image}.png`)}
+            alt={experience.company_name}
+            className="w-[80%] h-[80%] object-contain"
+          />
+        </div>
+      }
     >
-      {/* Left Section - Company Info */}
-      <div
-        className="
-        relative
-        p-8
-        bg-gradient-to-br from-neutral-900 to-black
-        flex flex-col
-        border-r border-white/5
-      "
-      >
-        {/* Company Logo */}
-        {item.image && (
-          <div
-            className="
-            w-16 h-16 mb-6
-            p-2.5
-            bg-white/5
-            rounded-xl
-            transition-transform duration-500
-            group-hover:scale-110
-          "
-          >
-            <img
-              src={require(`../../assets/${item.image}.png`)}
-              alt={item.title}
-              className="w-full h-full object-contain"
-            />
-          </div>
-        )}
-
-        <h3
-          className="
-          text-xl font-bold text-white mb-2
-          group-hover:text-[#ff7700]
-          transition-colors duration-300
-        "
+      <div className="text-left">
+        <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
+        <p
+          className="text-neon-blue text-[16px] font-semibold"
+          style={{ margin: 0 }}
         >
-          {item.position}
-        </h3>
-
-        <p className="text-white/60 font-medium">{item.title}</p>
-
-        <div className="mt-auto pt-6 flex items-center gap-2 text-white/40">
-          <FiMapPin className="text-[#ff7700]" />
-          <span className="text-sm">{item.location}</span>
-        </div>
+          {experience.position} at {experience.location}
+        </p>
       </div>
 
-      {/* Right Section - Experience Details */}
-      <div className="p-8 flex flex-col">
-        <div className="flex-1">
-          <p
-            className="
-            text-white/70 leading-relaxed
-            mb-6
-          "
-          >
-            {item.desc}
-          </p>
-
-          {/* Skills/Technologies */}
-          <div className="flex flex-wrap gap-2">
-            {item.skills.map((skill, idx) => (
-              <span
-                key={idx}
-                className="
-                  px-3 py-1
-                  text-sm
-                  bg-white/5
-                  rounded-full
-                  text-white/60
-                  border border-white/10
-                  hover:border-[#ff7700]/30
-                  transition-colors duration-300
-                "
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Date */}
-        <div
-          className="
-          mt-6 pt-6
-          border-t border-white/5
-          flex items-center justify-between
-        "
+      <ul className="mt-5 list-disc ml-5 space-y-2 text-left">
+        {visiblePoints.map((point, index) => (
+            <li key={`experience-point-${index}`} className="text-gray-300 text-[14px] pl-1 tracking-wider leading-relaxed">
+                {point}
+            </li>
+        ))}
+      </ul>
+      
+      {experience.desc.length > 2 && (
+        <button 
+          onClick={() => setExpanded(!expanded)}
+          className="mt-3 text-neon-blue text-sm flex items-center gap-1 hover:text-white transition-colors focus:outline-none"
         >
-          <div className="flex items-center gap-2 text-[#ff7700]">
-            <FiCalendar />
-            <span className="text-sm font-medium">{item.date}</span>
-          </div>
-        </div>
-      </div>
+          {expanded ? (
+            <>Show Less <FiChevronUp /></>
+          ) : (
+            <>Read More ({experience.desc.length - 2} more) <FiChevronDown /></>
+          )}
+        </button>
+      )}
 
-      {/* Hover Gradient Overlay */}
-      <div
-        className="
-        absolute inset-0
-        bg-gradient-to-r from-[#ff7700]/0 via-[#ff7700]/5 to-transparent
-        opacity-0 group-hover:opacity-100
-        transition-opacity duration-500
-        pointer-events-none
-      "
-      />
-    </div>
-  </div>
-);
+       <div className="mt-6">
+            <h4 className="text-[14px] font-semibold text-gray-400 mb-2">Technologies Used:</h4>
+            <div className="flex flex-wrap gap-2">
+                {experience.skills.map((skill, idx) => (
+                  <span key={idx} className="text-[12px] bg-neon-purple/10 border border-neon-purple/30 px-2 py-1 rounded-full text-neon-purple font-medium">
+                    {skill}
+                  </span>
+                ))}
+            </div>
+      </div>
+    </VerticalTimelineElement>
+  );
+};
 
 const Experience = () => {
   return (
-    <section className="min-h-screen bg-neutral-950 px-4 md:px-8 py-24">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="max-w-xl mb-20">
-          <div
-            className="
-            inline-flex items-center gap-2
-            px-4 py-2 mb-6
-            bg-[#ff7700]/10
-            rounded-full
-            border border-[#ff7700]/20
-          "
-          >
-            <FiBriefcase className="text-[#ff7700]" />
-            <span className="text-sm text-[#ff7700] font-medium">
-              Experience
-            </span>
-          </div>
+    <AnimatedPage>
+    <div className="min-h-screen pt-24 pb-10 px-4 md:px-10 max-w-7xl mx-auto">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <p className="text-[18px] text-neon-pink uppercase tracking-wider mb-2">What I have done so far</p>
+        <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] drop-shadow-lg">
+          Work Experience.
+        </h2>
+      </motion.div>
 
-          <h1
-            className="
-            text-4xl md:text-5xl lg:text-6xl
-            font-bold text-white
-            leading-tight
-          "
-          >
-            My <span className="text-[#ff7700]">Journey</span>
-          </h1>
-        </div>
-
-        {/* Experience Cards */}
-        <div className="space-y-8 relative">
-          {/* Timeline Line */}
-          <div
-            className="
-            absolute left-8 top-0 bottom-0
-            w-px
-            bg-gradient-to-b from-[#ff7700]/0 via-[#ff7700]/20 to-[#ff7700]/0
-          "
-          />
-
-          {exp.map((item, index) => (
-              <ExperienceCard key={item.id} item={item} index={index} />
-              
+      <div className="mt-20 flex flex-col">
+        <VerticalTimeline>
+          {exp.map((experience, index) => (
+            <ExperienceCard
+              key={`experience-${index}`}
+              experience={experience}
+            />
           ))}
-        </div>
+        </VerticalTimeline>
       </div>
-    </section>
+    </div>
+    </AnimatedPage>
   );
 };
 

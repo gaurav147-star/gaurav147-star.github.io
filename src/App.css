@@ -1,12 +1,79 @@
-.app {
-  height: 100%;
-  width: 100%;
-  background-image: url(../src/assets/bg.jpg);
-  background-size: cover;
-  background-position: top center;
-  position: relative;
-  z-index: 1;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #030014;
+  --secondary-color: #aaa6c3;
 }
+
+html {
+  background-color: #030014;
+  overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #030014;
+  color: white;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030014; 
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.3); 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.6); 
+}
+
+.App {
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  /* Ensure the dark gradient is the base */
+  background: linear-gradient(to bottom, #030014, #050511);
+}
+
+/* Nebula Background - Darker Variant */
+.nebula-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(76, 29, 149, 0.15), rgba(15, 23, 42, 0.4), #030014);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Utility Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Preloader */
 #preloader {
   position: fixed;
   top: 0;
@@ -14,52 +81,8 @@
   width: 100%;
   height: 100%;
   z-index: 999999;
-  background: rgba(0, 0, 0, 0.996);
-  background-image: url(./assets/pre.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: #030014;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-#preloader-none {
-  opacity: 0;
-}
-
-#no-scroll {
-  overflow: hidden;
-  height: 100vh;
-}
-
-.tech-icons {
-  font-size: 4.5em !important;
-  margin: 15px !important;
-  padding: 10px !important;
-  opacity: 0.93 !important;
-  border: 1.7px solid #ff7700 !important;
-  vertical-align: middle !important;
-  text-align: center !important;
-  border-radius: 5px !important;
-  display: table !important;
-  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
-  overflow: hidden !important;
-  transition: all 0.4s ease 0s !important;
-  background: rgba(99, 99, 99, 0.442);
-  color: rgba(255, 255, 255, 0.874);
-  
-}
-
-@media (max-width: 767px) {
-  .tech-icons {
-    margin: 10px !important;
-  }
-}
-
-.tech-icons:hover {
-  transform: scale(1.05) !important;
-  overflow: hidden !important;
-  border: 2.2px solid #ff7700 !important;
-}
-.tech-icon-images {
-  padding: 10px !important;
-  line-height: 1.6 !important;
-}
-

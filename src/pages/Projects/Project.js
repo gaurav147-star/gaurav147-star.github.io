@@ -1,191 +1,113 @@
 import React, { useState } from "react";
 import { AllProjects } from "../../assets/data/projects";
-import { FiGithub, FiExternalLink, FiCpu } from "react-icons/fi";
-import { GiPowerButton } from "react-icons/gi";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
+import AnimatedPage from "../../components/AnimatedPage";
 
 const ProjectCard = ({ project, index }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <div 
-      className={`
-        relative group
-        ${index % 3 === 0 ? 'lg:mt-12' : index % 3 === 1 ? 'lg:mt-24' : 'lg:mt-0'}
-      `}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <motion.div
+      layout
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.8 }}
+      transition={{ duration: 0.3 }}
+      className="bg-white/5 backdrop-blur-md p-5 rounded-2xl sm:w-[360px] w-full border border-white/10 hover:border-neon-blue/50 project-card-inner relative group shadow-glass"
     >
-      <div className="
-        relative overflow-hidden
-        bg-gradient-to-br from-gray-900/80 to-gray-950/90
-        backdrop-blur-md
-        rounded-2xl
-        border-2 border-orange-500/20
-        transition-all duration-500 ease-out
-        hover:scale-105 hover:border-orange-500/50
-        group-hover:shadow-[0_0_30px_-5px] group-hover:shadow-orange-500/30
-      ">
-        {/* Cyber Corner Accents */}
-        <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-orange-500/50" />
-        <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-orange-500/50" />
-        <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-orange-500/50" />
-        <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-orange-500/50" />
-
-        {/* Project Image */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/50 to-gray-900" />
-          <img
-            src={require(`../../assets/${project.image}.png`)}
-            alt={project.title}
-            className="w-full h-48 object-cover"
-          />
-          
-          {/* Power Button Overlay */}
-          <div className={`
-            absolute inset-0 
-            flex items-center justify-center
-            bg-gray-900/80 backdrop-blur-sm
-            transition-opacity duration-500
-            ${isHovered ? 'opacity-0' : 'opacity-100'}
-          `}>
-            <GiPowerButton className="text-6xl text-orange-500 animate-pulse" />
+      <div className="relative w-full h-[230px] overflow-hidden rounded-2xl">
+        <img
+          src={require(`../../assets/${project.image}.png`)}
+          alt={project.title}
+          className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-end p-3 gap-2">
+          <div
+            onClick={() => window.open(project.github_link, "_blank")}
+            className="w-10 h-10 rounded-full bg-black/80 flex justify-center items-center cursor-pointer hover:bg-neon-blue hover:text-black transition-all"
+          >
+            <FiGithub className="text-white text-[20px] hover:text-black" />
           </div>
-        </div>
-
-        {/* Content */}
-        <div className="p-6 space-y-4">
-          <div className="flex items-center space-x-3">
-            <FiCpu className="text-orange-500 animate-spin-slow" />
-            <h3 className="text-xl font-bold text-white group-hover:text-orange-500 transition-colors">
-              {project.title}
-            </h3>
-          </div>
-
-          {/* Tech Stack */}
-          <div className="flex flex-wrap gap-2">
-            {project.tag.map((tech, idx) => (
-              <span
-                key={idx}
-                className="
-                  px-3 py-1 text-xs
-                  rounded-lg
-                  bg-orange-500/10
-                  text-orange-400
-                  border border-orange-500/20
-                  uppercase tracking-wider
-                  hover:scale-105 hover:bg-orange-500/20
-                  transition-all duration-300
-                "
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-
-          {/* Links */}
-          <div className="
-            pt-4 border-t border-orange-500/20
-            flex justify-end space-x-4
-          ">
-            <a
-              href={project.github_link}
-              target="_blank"
-              rel="noreferrer"
-              className="
-                p-2 rounded-lg
-                bg-orange-500/10 hover:bg-orange-500/20
-                text-orange-500
-                transition-all duration-300
-                hover:scale-110
-                z-10
-              "
+          {project.site_link && (
+            <div
+              onClick={() => window.open(project.site_link, "_blank")}
+              className="w-10 h-10 rounded-full bg-black/80 flex justify-center items-center cursor-pointer ml-2 hover:bg-neon-purple hover:text-black transition-all"
             >
-              <FiGithub className="text-xl" />
-            </a>
-            <a
-              href={project.site_link}
-              target="_blank"
-              rel="noreferrer"
-              className="
-                p-2 rounded-lg
-                bg-orange-500/10 hover:bg-orange-500/20
-                text-orange-500
-                transition-all duration-300
-                hover:scale-110
-                z-10
-              "
-            >
-              <FiExternalLink className="text-xl" />
-            </a>
-          </div>
+              <FiExternalLink className="text-white text-[20px] hover:text-black" />
+            </div>
+          )}
         </div>
-        {/* Glowing Effect */}
-        <div className={`
-          absolute inset-0 
-          bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-orange-500/0
-          transition-opacity duration-1000
-          ${isHovered ? 'opacity-100' : 'opacity-0'}
-          animate-gradient-x
-          -z-10
-        `} />
-
       </div>
-    </div>
+
+      <div className="mt-5">
+        <h3 className="text-white font-bold text-[24px] group-hover:text-neon-blue transition-colors">{project.title}</h3>
+        <p className="mt-2 text-gray-300 text-[14px] leading-relaxed">
+          {project.description}
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+            {project.tag.map((tag, i) => (
+                <span key={i} className="text-[12px] text-neon-blue bg-neon-blue/10 px-2 py-1 rounded-full border border-neon-blue/30">
+                    #{tag}
+                </span>
+            ))}
+        </div>
+      </div>
+      
+      {/* Glow Effect */}
+      <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-neon-blue to-neon-purple opacity-0 group-hover:opacity-20 blur transition duration-500 -z-10" />
+    </motion.div>
   );
 };
 
 const Projects = () => {
+  const [filter, setFilter] = useState("All");
+  const categories = ["All", "Web Dev", "Game Dev", "AI"];
+
+  const filteredProjects =
+    filter === "All"
+      ? AllProjects
+      : AllProjects.filter((p) => p.category.includes(filter));
+
   return (
-    <div className="min-h-screen bg-gray-950 px-4 py-16 relative overflow-hidden">
-      {/* Cyber Grid Background */}
-      <div className="
-        absolute inset-0 
-        bg-[linear-gradient(rgba(255,119,0,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,119,0,0.1)_1px,transparent_1px)]
-        bg-[size:40px_40px]
-        [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]
-      " />
+    <AnimatedPage>
+    <div className="min-h-screen pt-24 pb-10 px-4 md:px-10 max-w-7xl mx-auto">
+      <motion.div
+        initial={{ y: -50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <p className="text-[18px] text-neon-blue uppercase tracking-wider mb-2">My Work</p>
+        <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] drop-shadow-lg">
+          Projects.
+        </h2>
+      </motion.div>
 
-      <div className="relative max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-20 space-y-4">
-          <div className="
-            inline-flex items-center justify-center
-            px-6 py-2 space-x-2
-            bg-orange-500/10
-            border border-orange-500/20
-            rounded-full
-          ">
-            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-            <span className="text-orange-500 text-sm uppercase tracking-wider">
-              System Online
-            </span>
-          </div>
-          
-          <h1 className="
-            text-4xl md:text-6xl font-bold
-            bg-gradient-to-r from-orange-500 via-white to-orange-500
-            text-transparent bg-clip-text
-            animate-gradient-x
-          ">
-            Project Matrix
-          </h1>
-        </div>
+      {/* Filter Buttons */}
+      <div className="flex justify-center gap-4 mb-16 flex-wrap">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setFilter(cat)}
+            className={`px-6 py-2 rounded-full border font-medium transition-all duration-300 backdrop-blur-md ${
+              filter === cat
+                ? "bg-neon-blue/20 text-neon-blue border-neon-blue shadow-[0_0_15px_rgba(0,243,255,0.4)]"
+                : "text-gray-400 border-white/10 hover:border-white/30 hover:text-white bg-white/5"
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
 
-        {/* Projects Grid */}
-        <div className="
-          grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-          gap-8 md:gap-6 lg:gap-8
-        ">
-          {AllProjects.map((project, index) => (
-            <ProjectCard 
-              key={project.id} 
-              project={project} 
-              index={index}
-            />
+      <div className="flex flex-wrap gap-7 justify-center">
+        <AnimatePresence>
+          {filteredProjects.map((project, index) => (
+            <ProjectCard key={project.id || index} project={project} index={index} />
           ))}
-        </div>
+        </AnimatePresence>
       </div>
     </div>
+    </AnimatedPage>
   );
 };
 
